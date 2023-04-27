@@ -1,0 +1,949 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<h:html xmlns:h="http://www.w3.org/1999/xhtml" xmlns:orx="http://openrosa.org/jr/xforms" xmlns="http://www.w3.org/2002/xforms" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:jr="http://openrosa.org/javarosa" xmlns:vellum="http://commcarehq.org/xforms/vellum">
+	<h:head>
+		<h:title>Assessment tool for the Beekeeping Cooperatives</h:title>
+		<model>
+			<instance>
+				<data xmlns:jrm="http://dev.commcarehq.org/jr/xforms" xmlns="http://openrosa.org/formdesigner/5D5D5B1C-6BB1-4456-940A-B66409BD422D" uiVersion="1" version="1" name="Assessment tool for the Beekeeping Cooperatives">
+					<date_of_the_interview />
+					<Name_of_enumerator />
+					<The_CountyLabel>
+						<the_county />
+					</The_CountyLabel>
+					<thesubcounty_label>
+						<the_subcounty />
+					</thesubcounty_label>
+					<ward_details>
+						<the_ward />
+					</ward_details>
+					<name_of_respondent />
+					<v_name_of_cooperative_society />
+					<position_in_coop />
+					<vii_which_year_was_cooperative_society_established />
+					<what_are_the_total_number_beekeepers_in_the_county />
+					<how_many_male_coop />
+					<how_many_female_coop />
+					<how_many_members_does_the_cooperative_has_at_the_moment />
+					<how_many_male_coop_current />
+					<how_many_female_coop_current />
+					<how_do_you_evaluate_the_members_of_the_cooperative_from_year_to_year />
+					<for_all_give_the_reason />
+					<what_are_the_major_problems_do_member_beekeepers_have />
+					<which_problems_were_solved_by_the_beekeepers_cooperative />
+					<are_there_members_dropout />
+					<how_many_was_the_initial_capital_of_the_cooperative />
+					<how_many_capitals_do_the_cooperative_currently_has />
+					<how_many_kg_of_honey_does_the_cooperative_collect_per_year_from_its_members />
+					<how_do_you_observe_an_average_honey_production_per_hive_compare_to_the_aver />
+					<for_your_answer_give_the_reason />
+					<how_does_the_cooperative_evaluate_average_dividends_to_the_members_from_yea />
+					<what_was_the_main_objective_s_to_establish_the_beekeepers_cooperative />
+					<how_is_the_success_of_the_cooperative_in_achieving_its_objective />
+					<what_problems_do_the_cooperative_faced_to_achieve_its_objective />
+					<where_does_the_cooperative_get_support_for_its_business />
+					<what_is_your_comment_on_support_you_are_currently_getting_from_different_so />
+					<what_kinds_of_services_does_the_cooperative_give_for_its_members />
+					<what_is_the_role_of_the_following_stakeholders_in_honey_value_chain_a_farme />
+					<what_is_the_role_of_the_following_stakeholders_in_honey_value_chain_b_beeke />
+					<what_is_the_role_of_the_following_stakeholders_in_honey_value_chain_cngos />
+					<what_is_the_role_of_the_following_stakeholders_in_honey_value_chain_d_count />
+					<what_is_the_role_of_the_following_stakeholders_in_honey_value_chain_e_proce />
+					<export_companies />
+					<purchasing_selling_price_of_honey_purchasing_price_per_kg />
+					<purchasing_selling_price_of_honey_selling_price_per_kg />
+					<how_the_benefit_is_distributed_to_the_members_of_the_cooperative />
+					<where_does_the_cooperative_sell_honey />
+					<specify_others_coop_sell_hny />
+					<from_where_does_the_cooperative_collects_the_honey />
+					<who_are_your_main_customers />
+					<in_which_season_of_the_year_the_honey_collection_is_maximum />
+					<what_is_your_activity_in_the_rest_of_the_season />
+					<what_are_the_major_constraints_and_opportunities_in_honey_marketing_in_your />
+					<opportunities />
+					<gps />
+					<thanks_you />
+				</data>
+			</instance>
+			<instance src="jr://instance/casedb" id="casedb" />
+			<instance src="jr://instance/session" id="commcaresession" />
+			<instance src="jr://fixture/item-list:heacounty" id="heacounty" />
+			<instance src="jr://fixture/item-list:heasubcounty" id="heasubcounty" />
+			<instance src="jr://fixture/item-list:heawards" id="heawards" />
+			<bind vellum:nodeset="#form/date_of_the_interview" nodeset="/data/date_of_the_interview" type="xsd:date" constraint=". = today()" required="true()" />
+			<bind vellum:nodeset="#form/Name_of_enumerator" nodeset="/data/Name_of_enumerator" vellum:calculate="#user/username" calculate="instance('casedb')/casedb/case[@case_type = 'commcare-user'][hq_user_id = instance('commcaresession')/session/context/userid]/username" />
+			<bind vellum:nodeset="#form/The_CountyLabel" nodeset="/data/The_CountyLabel" />
+			<bind vellum:nodeset="#form/The_CountyLabel/the_county" nodeset="/data/The_CountyLabel/the_county" required="true()" />
+			<bind vellum:nodeset="#form/thesubcounty_label" nodeset="/data/thesubcounty_label" />
+			<bind vellum:nodeset="#form/thesubcounty_label/the_subcounty" nodeset="/data/thesubcounty_label/the_subcounty" required="true()" />
+			<bind vellum:nodeset="#form/ward_details" nodeset="/data/ward_details" />
+			<bind vellum:nodeset="#form/ward_details/the_ward" nodeset="/data/ward_details/the_ward" required="true()" />
+			<bind vellum:nodeset="#form/name_of_respondent" nodeset="/data/name_of_respondent" type="xsd:string" required="true()" />
+			<bind vellum:nodeset="#form/v_name_of_cooperative_society" nodeset="/data/v_name_of_cooperative_society" type="xsd:string" required="true()" />
+			<bind vellum:nodeset="#form/position_in_coop" nodeset="/data/position_in_coop" type="xsd:string" required="true()" />
+			<bind vellum:nodeset="#form/vii_which_year_was_cooperative_society_established" nodeset="/data/vii_which_year_was_cooperative_society_established" type="xsd:int" required="true()" />
+			<bind vellum:nodeset="#form/what_are_the_total_number_beekeepers_in_the_county" nodeset="/data/what_are_the_total_number_beekeepers_in_the_county" type="xsd:int" required="true()" />
+			<bind vellum:nodeset="#form/how_many_male_coop" nodeset="/data/how_many_male_coop" type="xsd:int" required="true()" />
+			<bind vellum:nodeset="#form/how_many_female_coop" nodeset="/data/how_many_female_coop" type="xsd:int" required="true()" />
+			<bind vellum:nodeset="#form/how_many_members_does_the_cooperative_has_at_the_moment" nodeset="/data/how_many_members_does_the_cooperative_has_at_the_moment" type="xsd:int" required="true()" />
+			<bind vellum:nodeset="#form/how_many_male_coop_current" nodeset="/data/how_many_male_coop_current" type="xsd:int" required="true()" />
+			<bind vellum:nodeset="#form/how_many_female_coop_current" nodeset="/data/how_many_female_coop_current" type="xsd:int" required="true()" />
+			<bind vellum:nodeset="#form/how_do_you_evaluate_the_members_of_the_cooperative_from_year_to_year" nodeset="/data/how_do_you_evaluate_the_members_of_the_cooperative_from_year_to_year" required="true()" />
+			<bind vellum:nodeset="#form/for_all_give_the_reason" nodeset="/data/for_all_give_the_reason" type="xsd:string" required="true()" />
+			<bind vellum:nodeset="#form/what_are_the_major_problems_do_member_beekeepers_have" nodeset="/data/what_are_the_major_problems_do_member_beekeepers_have" type="xsd:string" required="true()" />
+			<bind vellum:nodeset="#form/which_problems_were_solved_by_the_beekeepers_cooperative" nodeset="/data/which_problems_were_solved_by_the_beekeepers_cooperative" type="xsd:string" required="true()" />
+			<bind vellum:nodeset="#form/are_there_members_dropout" nodeset="/data/are_there_members_dropout" required="true()" />
+			<bind vellum:nodeset="#form/how_many_was_the_initial_capital_of_the_cooperative" nodeset="/data/how_many_was_the_initial_capital_of_the_cooperative" type="xsd:int" required="true()" />
+			<bind vellum:nodeset="#form/how_many_capitals_do_the_cooperative_currently_has" nodeset="/data/how_many_capitals_do_the_cooperative_currently_has" type="xsd:int" />
+			<bind vellum:nodeset="#form/how_many_kg_of_honey_does_the_cooperative_collect_per_year_from_its_members" nodeset="/data/how_many_kg_of_honey_does_the_cooperative_collect_per_year_from_its_members" type="xsd:double" required="true()" />
+			<bind vellum:nodeset="#form/how_do_you_observe_an_average_honey_production_per_hive_compare_to_the_aver" nodeset="/data/how_do_you_observe_an_average_honey_production_per_hive_compare_to_the_aver" required="true()" />
+			<bind vellum:nodeset="#form/for_your_answer_give_the_reason" nodeset="/data/for_your_answer_give_the_reason" type="xsd:string" required="true()" />
+			<bind vellum:nodeset="#form/how_does_the_cooperative_evaluate_average_dividends_to_the_members_from_yea" nodeset="/data/how_does_the_cooperative_evaluate_average_dividends_to_the_members_from_yea" required="true()" />
+			<bind vellum:nodeset="#form/what_was_the_main_objective_s_to_establish_the_beekeepers_cooperative" nodeset="/data/what_was_the_main_objective_s_to_establish_the_beekeepers_cooperative" type="xsd:string" required="true()" />
+			<bind vellum:nodeset="#form/how_is_the_success_of_the_cooperative_in_achieving_its_objective" nodeset="/data/how_is_the_success_of_the_cooperative_in_achieving_its_objective" type="xsd:string" required="true()" />
+			<bind vellum:nodeset="#form/what_problems_do_the_cooperative_faced_to_achieve_its_objective" nodeset="/data/what_problems_do_the_cooperative_faced_to_achieve_its_objective" required="true()" />
+			<bind vellum:nodeset="#form/where_does_the_cooperative_get_support_for_its_business" nodeset="/data/where_does_the_cooperative_get_support_for_its_business" type="xsd:string" required="true()" />
+			<bind vellum:nodeset="#form/what_is_your_comment_on_support_you_are_currently_getting_from_different_so" nodeset="/data/what_is_your_comment_on_support_you_are_currently_getting_from_different_so" type="xsd:string" required="true()" />
+			<bind vellum:nodeset="#form/what_kinds_of_services_does_the_cooperative_give_for_its_members" nodeset="/data/what_kinds_of_services_does_the_cooperative_give_for_its_members" type="xsd:string" required="true()" />
+			<bind vellum:nodeset="#form/what_is_the_role_of_the_following_stakeholders_in_honey_value_chain_a_farme" nodeset="/data/what_is_the_role_of_the_following_stakeholders_in_honey_value_chain_a_farme" required="true()" />
+			<bind vellum:nodeset="#form/what_is_the_role_of_the_following_stakeholders_in_honey_value_chain_b_beeke" nodeset="/data/what_is_the_role_of_the_following_stakeholders_in_honey_value_chain_b_beeke" required="true()" />
+			<bind vellum:nodeset="#form/what_is_the_role_of_the_following_stakeholders_in_honey_value_chain_cngos" nodeset="/data/what_is_the_role_of_the_following_stakeholders_in_honey_value_chain_cngos" required="true()" />
+			<bind vellum:nodeset="#form/what_is_the_role_of_the_following_stakeholders_in_honey_value_chain_d_count" nodeset="/data/what_is_the_role_of_the_following_stakeholders_in_honey_value_chain_d_count" required="true()" />
+			<bind vellum:nodeset="#form/what_is_the_role_of_the_following_stakeholders_in_honey_value_chain_e_proce" nodeset="/data/what_is_the_role_of_the_following_stakeholders_in_honey_value_chain_e_proce" required="true()" />
+			<bind vellum:nodeset="#form/export_companies" nodeset="/data/export_companies" required="true()" />
+			<bind vellum:nodeset="#form/purchasing_selling_price_of_honey_purchasing_price_per_kg" nodeset="/data/purchasing_selling_price_of_honey_purchasing_price_per_kg" type="xsd:double" required="true()" />
+			<bind vellum:nodeset="#form/purchasing_selling_price_of_honey_selling_price_per_kg" nodeset="/data/purchasing_selling_price_of_honey_selling_price_per_kg" type="xsd:double" required="true()" />
+			<bind vellum:nodeset="#form/how_the_benefit_is_distributed_to_the_members_of_the_cooperative" nodeset="/data/how_the_benefit_is_distributed_to_the_members_of_the_cooperative" type="xsd:string" required="true()" />
+			<bind vellum:nodeset="#form/where_does_the_cooperative_sell_honey" nodeset="/data/where_does_the_cooperative_sell_honey" required="true()" />
+			<bind vellum:nodeset="#form/specify_others_coop_sell_hny" nodeset="/data/specify_others_coop_sell_hny" type="xsd:string" vellum:relevant="selected(#form/where_does_the_cooperative_sell_honey, 'others')" relevant="selected(/data/where_does_the_cooperative_sell_honey, 'others')" required="true()" />
+			<bind vellum:nodeset="#form/from_where_does_the_cooperative_collects_the_honey" nodeset="/data/from_where_does_the_cooperative_collects_the_honey" required="true()" />
+			<bind vellum:nodeset="#form/who_are_your_main_customers" nodeset="/data/who_are_your_main_customers" required="true()" />
+			<bind vellum:nodeset="#form/in_which_season_of_the_year_the_honey_collection_is_maximum" nodeset="/data/in_which_season_of_the_year_the_honey_collection_is_maximum" required="true()" />
+			<bind vellum:nodeset="#form/what_is_your_activity_in_the_rest_of_the_season" nodeset="/data/what_is_your_activity_in_the_rest_of_the_season" type="xsd:string" required="true()" />
+			<bind vellum:nodeset="#form/what_are_the_major_constraints_and_opportunities_in_honey_marketing_in_your" nodeset="/data/what_are_the_major_constraints_and_opportunities_in_honey_marketing_in_your" type="xsd:string" required="true()" />
+			<bind vellum:nodeset="#form/opportunities" nodeset="/data/opportunities" type="xsd:string" required="true()" />
+			<bind vellum:nodeset="#form/gps" nodeset="/data/gps" type="geopoint" required="true()" />
+			<bind vellum:nodeset="#form/thanks_you" nodeset="/data/thanks_you" />
+			<itext>
+				<translation lang="en" default="">
+					<text id="date_of_the_interview-label">
+						<value>i) Date of the interview</value>
+					</text>
+					<text id="The_CountyLabel-label">
+						<value>The County Selection</value>
+						<value form="markdown">The County Selection</value>
+					</text>
+					<text id="The_CountyLabel/the_county-label">
+						<value>i) The County is :</value>
+					</text>
+					<text id="thesubcounty_label-label">
+						<value>The Sub County Selection</value>
+						<value form="markdown">The Sub County Selection</value>
+					</text>
+					<text id="thesubcounty_label/the_subcounty-label">
+						<value>ii) The Sub-County</value>
+						<value form="markdown">ii) The Sub-County</value>
+					</text>
+					<text id="ward_details-label">
+						<value>The Ward Name Selection</value>
+						<value form="markdown">The Ward Name Selection</value>
+					</text>
+					<text id="ward_details/the_ward-label">
+						<value>iii) The Ward</value>
+					</text>
+					<text id="name_of_respondent-label">
+						<value>iv. Name of respondent</value>
+					</text>
+					<text id="v_name_of_cooperative_society-label">
+						<value>v. Name of Cooperative society</value>
+					</text>
+					<text id="position_in_coop-label">
+						<value>vi. Position in the cooperative society</value>
+					</text>
+					<text id="vii_which_year_was_cooperative_society_established-label">
+						<value>vii. Which year was cooperative society established</value>
+					</text>
+					<text id="what_are_the_total_number_beekeepers_in_the_county-label">
+						<value>1. How many members established the cooperative society</value>
+						<value form="markdown">1. How many members established the cooperative society</value>
+					</text>
+					<text id="how_many_male_coop-label">
+						<value>1a. How many Male</value>
+						<value form="markdown">1a. How many Male</value>
+					</text>
+					<text id="how_many_female_coop-label">
+						<value>1b. How many Female</value>
+					</text>
+					<text id="how_many_members_does_the_cooperative_has_at_the_moment-label">
+						<value>2. How many members does the cooperative has at the moment?</value>
+						<value form="markdown">2. How many members does the cooperative has at the moment?</value>
+					</text>
+					<text id="how_many_male_coop_current-label">
+						<value>2a. How many Male</value>
+						<value form="markdown">2a. How many Male</value>
+					</text>
+					<text id="how_many_female_coop_current-label">
+						<value>2b. How many Female</value>
+					</text>
+					<text id="how_do_you_evaluate_the_members_of_the_cooperative_from_year_to_year-label">
+						<value>3. How do you evaluate the members of the cooperative from year to year?</value>
+						<value form="markdown">3. How do you evaluate the members of the cooperative from year to year?</value>
+					</text>
+					<text id="how_do_you_evaluate_the_members_of_the_cooperative_from_year_to_year-increasing-label">
+						<value>Increasing  </value>
+					</text>
+					<text id="how_do_you_evaluate_the_members_of_the_cooperative_from_year_to_year-decreasing-label">
+						<value>Decreasing  </value>
+					</text>
+					<text id="how_do_you_evaluate_the_members_of_the_cooperative_from_year_to_year-remain_the_same-label">
+						<value>Remain the same</value>
+					</text>
+					<text id="for_all_give_the_reason-label">
+						<value>4. For all give the reason</value>
+						<value form="markdown">4. For all give the reason</value>
+					</text>
+					<text id="what_are_the_major_problems_do_member_beekeepers_have-label">
+						<value>5. What are the major problems do member beekeepers have?</value>
+						<value form="markdown">5. What are the major problems do member beekeepers have?</value>
+					</text>
+					<text id="which_problems_were_solved_by_the_beekeepers_cooperative-label">
+						<value>6. Which problems were solved by the beekeepers cooperative?</value>
+						<value form="markdown">6. Which problems were solved by the beekeepers cooperative?</value>
+					</text>
+					<text id="are_there_members_dropout-label">
+						<value>7. Are there members’ dropout?</value>
+						<value form="markdown">7. Are there members’ dropout?</value>
+					</text>
+					<text id="are_there_members_dropout-yes-label">
+						<value>Yes</value>
+					</text>
+					<text id="are_there_members_dropout-no-label">
+						<value>No</value>
+					</text>
+					<text id="how_many_was_the_initial_capital_of_the_cooperative-label">
+						<value>8. How many was the initial capital of the cooperative?</value>
+						<value form="markdown">8. How many was the initial capital of the cooperative?</value>
+					</text>
+					<text id="how_many_capitals_do_the_cooperative_currently_has-label">
+						<value>9. How many capitals do the cooperative currently has?</value>
+						<value form="markdown">9. How many capitals do the cooperative currently has?</value>
+					</text>
+					<text id="how_many_kg_of_honey_does_the_cooperative_collect_per_year_from_its_members-label">
+						<value>10. How many kg of honey does the cooperative collect per year from its members?</value>
+						<value form="markdown">10. How many kg of honey does the cooperative collect per year from its members?</value>
+					</text>
+					<text id="how_do_you_observe_an_average_honey_production_per_hive_compare_to_the_aver-label">
+						<value>11. How do you observe an average honey production per hive compare to the average yield of the area?</value>
+						<value form="markdown">11. How do you observe an average honey production per hive compare to the average yield of the area?</value>
+					</text>
+					<text id="how_do_you_observe_an_average_honey_production_per_hive_compare_to_the_aver-increasing-label">
+						<value>Increasing</value>
+					</text>
+					<text id="how_do_you_observe_an_average_honey_production_per_hive_compare_to_the_aver-decreasing-label">
+						<value>Decreasing  </value>
+					</text>
+					<text id="how_do_you_observe_an_average_honey_production_per_hive_compare_to_the_aver-remain_the_same-label">
+						<value>Remain the same</value>
+					</text>
+					<text id="for_your_answer_give_the_reason-label">
+						<value>12. For your answer give the reason?</value>
+						<value form="markdown">12. For your answer give the reason?</value>
+					</text>
+					<text id="how_does_the_cooperative_evaluate_average_dividends_to_the_members_from_yea-label">
+						<value>13. How does the cooperative evaluate average dividends to the members from year to year?</value>
+						<value form="markdown">13. How does the cooperative evaluate average dividends to the members from year to year?</value>
+					</text>
+					<text id="how_does_the_cooperative_evaluate_average_dividends_to_the_members_from_yea-increasing-label">
+						<value> Increasing</value>
+					</text>
+					<text id="how_does_the_cooperative_evaluate_average_dividends_to_the_members_from_yea-decreasing-label">
+						<value>Decreasing</value>
+					</text>
+					<text id="how_does_the_cooperative_evaluate_average_dividends_to_the_members_from_yea-remain_the_constant-label">
+						<value>Remain the constant  </value>
+					</text>
+					<text id="how_does_the_cooperative_evaluate_average_dividends_to_the_members_from_yea-others_specify-label">
+						<value>Others specify</value>
+					</text>
+					<text id="what_was_the_main_objective_s_to_establish_the_beekeepers_cooperative-label">
+						<value>What was the main objective (s) to establish the beekeepers cooperative?</value>
+					</text>
+					<text id="how_is_the_success_of_the_cooperative_in_achieving_its_objective-label">
+						<value>How is the success of the cooperative in achieving its objective?</value>
+					</text>
+					<text id="what_problems_do_the_cooperative_faced_to_achieve_its_objective-label">
+						<value>13. What problems do the cooperative faced to achieve its objective?</value>
+						<value form="markdown">13. What problems do the cooperative faced to achieve its objective?</value>
+					</text>
+					<text id="what_problems_do_the_cooperative_faced_to_achieve_its_objective-shortage_of_budget-label">
+						<value> Shortage of budget</value>
+					</text>
+					<text id="what_problems_do_the_cooperative_faced_to_achieve_its_objective-low_members_participation-label">
+						<value>Low members’ participation  </value>
+					</text>
+					<text id="what_problems_do_the_cooperative_faced_to_achieve_its_objective-high_turn_of_members-label">
+						<value>High turn of members</value>
+					</text>
+					<text id="what_problems_do_the_cooperative_faced_to_achieve_its_objective-others-label">
+						<value>Others</value>
+					</text>
+					<text id="where_does_the_cooperative_get_support_for_its_business-label">
+						<value>14. Where does the cooperative get support for its business?</value>
+						<value form="markdown">14. Where does the cooperative get support for its business?</value>
+					</text>
+					<text id="what_is_your_comment_on_support_you_are_currently_getting_from_different_so-label">
+						<value>15. What is your comment on support you are currently getting from different sources</value>
+						<value form="markdown">15. What is your comment on support you are currently getting from different sources</value>
+					</text>
+					<text id="what_kinds_of_services_does_the_cooperative_give_for_its_members-label">
+						<value>16. What kinds of services does the cooperative give for its members?</value>
+						<value form="markdown">16. What kinds of services does the cooperative give for its members?</value>
+					</text>
+					<text id="what_is_the_role_of_the_following_stakeholders_in_honey_value_chain_a_farme-label">
+						<value>17. What is the role of the following stakeholders in honey value chain? **A. Farmers**.</value>
+						<value form="markdown">17. What is the role of the following stakeholders in honey value chain? **A. Farmers**.</value>
+					</text>
+					<text id="what_is_the_role_of_the_following_stakeholders_in_honey_value_chain_a_farme-honey_produces-label">
+						<value>Honey produces</value>
+					</text>
+					<text id="what_is_the_role_of_the_following_stakeholders_in_honey_value_chain_a_farme-assembling-label">
+						<value>Assembling</value>
+					</text>
+					<text id="what_is_the_role_of_the_following_stakeholders_in_honey_value_chain_a_farme-processing_semi-processing-label">
+						<value>Processing (semi-processing</value>
+					</text>
+					<text id="what_is_the_role_of_the_following_stakeholders_in_honey_value_chain_a_farme-others-label">
+						<value>Others</value>
+					</text>
+					<text id="what_is_the_role_of_the_following_stakeholders_in_honey_value_chain_b_beeke-label">
+						<value>What is the role of the following stakeholders in honey value chain
+**B. Beekeepers cooperative**</value>
+						<value form="markdown">What is the role of the following stakeholders in honey value chain
+**B. Beekeepers cooperative**</value>
+					</text>
+					<text id="what_is_the_role_of_the_following_stakeholders_in_honey_value_chain_b_beeke-training_and_input_supplying-label">
+						<value>Training and input supplying</value>
+					</text>
+					<text id="what_is_the_role_of_the_following_stakeholders_in_honey_value_chain_b_beeke-collection_and_bulking-label">
+						<value>Collection and bulking</value>
+					</text>
+					<text id="what_is_the_role_of_the_following_stakeholders_in_honey_value_chain_b_beeke-grading-label">
+						<value>Grading</value>
+					</text>
+					<text id="what_is_the_role_of_the_following_stakeholders_in_honey_value_chain_b_beeke-final_processing-label">
+						<value>Final processing</value>
+					</text>
+					<text id="what_is_the_role_of_the_following_stakeholders_in_honey_value_chain_b_beeke-packaging_and_distribution-label">
+						<value>Packaging and distribution</value>
+					</text>
+					<text id="what_is_the_role_of_the_following_stakeholders_in_honey_value_chain_b_beeke-whole_selling-label">
+						<value>Whole selling</value>
+					</text>
+					<text id="what_is_the_role_of_the_following_stakeholders_in_honey_value_chain_b_beeke-retailing-label">
+						<value>Retailing</value>
+					</text>
+					<text id="what_is_the_role_of_the_following_stakeholders_in_honey_value_chain_b_beeke-others_specify-label">
+						<value>Others specify</value>
+					</text>
+					<text id="what_is_the_role_of_the_following_stakeholders_in_honey_value_chain_cngos-label">
+						<value>What is the role of the following stakeholders in honey value chain? **C.NGOs**</value>
+						<value form="markdown">What is the role of the following stakeholders in honey value chain? **C.NGOs**</value>
+					</text>
+					<text id="what_is_the_role_of_the_following_stakeholders_in_honey_value_chain_cngos-input_supply-label">
+						<value>Input supply</value>
+					</text>
+					<text id="what_is_the_role_of_the_following_stakeholders_in_honey_value_chain_cngos-training-label">
+						<value>Training</value>
+					</text>
+					<text id="what_is_the_role_of_the_following_stakeholders_in_honey_value_chain_cngos-financial_supporting-label">
+						<value>Financial supporting  </value>
+					</text>
+					<text id="what_is_the_role_of_the_following_stakeholders_in_honey_value_chain_cngos-others-label">
+						<value>Others</value>
+					</text>
+					<text id="what_is_the_role_of_the_following_stakeholders_in_honey_value_chain_d_count-label">
+						<value>What is the role of the following stakeholders in honey value chain?  **D. County livestock department**</value>
+						<value form="markdown">What is the role of the following stakeholders in honey value chain?  **D. County livestock department**</value>
+					</text>
+					<text id="what_is_the_role_of_the_following_stakeholders_in_honey_value_chain_d_count-market_information-label">
+						<value>market information</value>
+					</text>
+					<text id="what_is_the_role_of_the_following_stakeholders_in_honey_value_chain_d_count-training-label">
+						<value>Training</value>
+					</text>
+					<text id="what_is_the_role_of_the_following_stakeholders_in_honey_value_chain_d_count-input_supplying-label">
+						<value>Input supplying  </value>
+					</text>
+					<text id="what_is_the_role_of_the_following_stakeholders_in_honey_value_chain_d_count-others-label">
+						<value>Others</value>
+					</text>
+					<text id="what_is_the_role_of_the_following_stakeholders_in_honey_value_chain_e_proce-label">
+						<value>What is the role of the following stakeholders in honey value chain? **E. Processors and traders**</value>
+						<value form="markdown">What is the role of the following stakeholders in honey value chain? **E. Processors and traders**</value>
+					</text>
+					<text id="what_is_the_role_of_the_following_stakeholders_in_honey_value_chain_e_proce-collection_and_bulking-label">
+						<value>Collection and bulking</value>
+					</text>
+					<text id="what_is_the_role_of_the_following_stakeholders_in_honey_value_chain_e_proce-processing-label">
+						<value>Processing</value>
+					</text>
+					<text id="what_is_the_role_of_the_following_stakeholders_in_honey_value_chain_e_proce-grading_and_labeling-label">
+						<value>Grading and labeling</value>
+					</text>
+					<text id="what_is_the_role_of_the_following_stakeholders_in_honey_value_chain_e_proce-retailing-label">
+						<value>Retailing  </value>
+					</text>
+					<text id="what_is_the_role_of_the_following_stakeholders_in_honey_value_chain_e_proce-others-label">
+						<value>Others</value>
+					</text>
+					<text id="export_companies-label">
+						<value>What is the role of the following stakeholders in honey value chain? **F. Export companies**</value>
+						<value form="markdown">What is the role of the following stakeholders in honey value chain? **F. Export companies**</value>
+					</text>
+					<text id="export_companies-input_supply-label">
+						<value>Input supply</value>
+					</text>
+					<text id="export_companies-collection_and_processing-label">
+						<value>Collection and processing</value>
+					</text>
+					<text id="export_companies-grading_and_labeling-label">
+						<value>Grading and labeling</value>
+					</text>
+					<text id="export_companies-retailing-label">
+						<value>Retailing</value>
+					</text>
+					<text id="export_companies-others-label">
+						<value>Others</value>
+					</text>
+					<text id="purchasing_selling_price_of_honey_purchasing_price_per_kg-label">
+						<value>18. Purchasing &amp; selling price of honey: **Purchasing price per kg**</value>
+						<value form="markdown">18. Purchasing &amp; selling price of honey: **Purchasing price per kg**</value>
+					</text>
+					<text id="purchasing_selling_price_of_honey_selling_price_per_kg-label">
+						<value>18. Purchasing &amp; selling price of honey **Selling price per kg**</value>
+						<value form="markdown">18. Purchasing &amp; selling price of honey **Selling price per kg**</value>
+					</text>
+					<text id="how_the_benefit_is_distributed_to_the_members_of_the_cooperative-label">
+						<value>19. How the benefit is distributed to the members of the cooperative?</value>
+						<value form="markdown">19. How the benefit is distributed to the members of the cooperative?</value>
+					</text>
+					<text id="where_does_the_cooperative_sell_honey-label">
+						<value>20. Where does the cooperative sell honey?</value>
+						<value form="markdown">20. Where does the cooperative sell honey?</value>
+					</text>
+					<text id="where_does_the_cooperative_sell_honey-at_selling_unit_in_the_nearby_town-label">
+						<value>At selling unit in the nearby town</value>
+					</text>
+					<text id="where_does_the_cooperative_sell_honey-at_big_city-label">
+						<value>At big city</value>
+					</text>
+					<text id="where_does_the_cooperative_sell_honey-collection_and_processing_center-label">
+						<value>Collection and processing center</value>
+					</text>
+					<text id="where_does_the_cooperative_sell_honey-others-label">
+						<value>Others</value>
+					</text>
+					<text id="specify_others_coop_sell_hny-label">
+						<value>Specify others coop sell hny</value>
+					</text>
+					<text id="from_where_does_the_cooperative_collects_the_honey-label">
+						<value>21. From where does the cooperative collects the honey?</value>
+						<value form="markdown">21. From where does the cooperative collects the honey?</value>
+					</text>
+					<text id="from_where_does_the_cooperative_collects_the_honey-a_from_the_members-label">
+						<value>From the members</value>
+					</text>
+					<text id="from_where_does_the_cooperative_collects_the_honey-from_non-members-label">
+						<value>From non-members</value>
+					</text>
+					<text id="from_where_does_the_cooperative_collects_the_honey-from_traders-label">
+						<value>From traders</value>
+					</text>
+					<text id="from_where_does_the_cooperative_collects_the_honey-others-label">
+						<value>Others</value>
+					</text>
+					<text id="who_are_your_main_customers-label">
+						<value>22. Who are your main customers?</value>
+						<value form="markdown">22. Who are your main customers?</value>
+					</text>
+					<text id="who_are_your_main_customers-local_consumers-label">
+						<value>Local consumers</value>
+					</text>
+					<text id="who_are_your_main_customers-local_traders-label">
+						<value>Local traders</value>
+					</text>
+					<text id="who_are_your_main_customers-local_drink_makers-label">
+						<value>Local drink makers</value>
+					</text>
+					<text id="who_are_your_main_customers-honey_exporters-label">
+						<value>Honey Exporters</value>
+					</text>
+					<text id="who_are_your_main_customers-foreign_market-label">
+						<value>Foreign market</value>
+					</text>
+					<text id="who_are_your_main_customers-tourists-label">
+						<value>Tourists</value>
+					</text>
+					<text id="who_are_your_main_customers-others-label">
+						<value>Others</value>
+					</text>
+					<text id="in_which_season_of_the_year_the_honey_collection_is_maximum-label">
+						<value>In which season of the year the honey collection is maximum?</value>
+					</text>
+					<text id="in_which_season_of_the_year_the_honey_collection_is_maximum-dry_season-label">
+						<value>Dry season</value>
+					</text>
+					<text id="in_which_season_of_the_year_the_honey_collection_is_maximum-rain_season-label">
+						<value>Rain season</value>
+					</text>
+					<text id="what_is_your_activity_in_the_rest_of_the_season-label">
+						<value>24. What is your activity in the rest of the season?</value>
+						<value form="markdown">24. What is your activity in the rest of the season?</value>
+					</text>
+					<text id="what_are_the_major_constraints_and_opportunities_in_honey_marketing_in_your-label">
+						<value>27. What are the major constraints and opportunities in honey marketing in your locality?
+**Constraints**</value>
+						<value form="markdown">27. What are the major constraints and opportunities in honey marketing in your locality?
+**Constraints**</value>
+					</text>
+					<text id="opportunities-label">
+						<value>27. What are the major constraints and opportunities in honey marketing in your locality? **Opportunities**</value>
+						<value form="markdown">27. What are the major constraints and opportunities in honey marketing in your locality? **Opportunities**</value>
+					</text>
+					<text id="gps-label">
+						<value>GPS coordinates</value>
+					</text>
+					<text id="thanks_you-label">
+						<value>Thanks you.</value>
+					</text>
+				</translation>
+			</itext>
+		</model>
+		<vellum:hashtags>{&quot;#user/username&quot;:null}</vellum:hashtags>
+		<vellum:hashtagTransforms>{&quot;prefixes&quot;:{&quot;#user/&quot;:&quot;instance('casedb')/casedb/case[@case_type = 'commcare-user'][hq_user_id = instance('commcaresession')/session/context/userid]/&quot;}}</vellum:hashtagTransforms>
+	</h:head>
+	<h:body>
+		<input vellum:ref="#form/date_of_the_interview" ref="/data/date_of_the_interview">
+			<label ref="jr:itext('date_of_the_interview-label')" />
+		</input>
+		<group vellum:ref="#form/The_CountyLabel" ref="/data/The_CountyLabel" appearance="field-list">
+			<label ref="jr:itext('The_CountyLabel-label')" />
+			<select1 vellum:ref="#form/The_CountyLabel/the_county" ref="/data/The_CountyLabel/the_county">
+				<label ref="jr:itext('The_CountyLabel/the_county-label')" />
+				<itemset nodeset="instance('heacounty')/heacounty_list/heacounty">
+					<label ref="id" />
+					<value ref="id" />
+				</itemset>
+			</select1>
+		</group>
+		<group vellum:ref="#form/thesubcounty_label" ref="/data/thesubcounty_label" appearance="field-list">
+			<label ref="jr:itext('thesubcounty_label-label')" />
+			<select1 vellum:ref="#form/thesubcounty_label/the_subcounty" ref="/data/thesubcounty_label/the_subcounty">
+				<label ref="jr:itext('thesubcounty_label/the_subcounty-label')" />
+				<itemset nodeset="instance('heasubcounty')/heasubcounty_list/heasubcounty[heacounty_id = /data/The_CountyLabel/the_county]" vellum:nodeset="instance('heasubcounty')/heasubcounty_list/heasubcounty[heacounty_id = #form/The_CountyLabel/the_county]">
+					<label ref="id" />
+					<value ref="id" />
+				</itemset>
+			</select1>
+		</group>
+		<group vellum:ref="#form/ward_details" ref="/data/ward_details" appearance="field-list">
+			<label ref="jr:itext('ward_details-label')" />
+			<select1 vellum:ref="#form/ward_details/the_ward" ref="/data/ward_details/the_ward">
+				<label ref="jr:itext('ward_details/the_ward-label')" />
+				<itemset nodeset="instance('heawards')/heawards_list/heawards[heasubcounty_id = /data/thesubcounty_label/the_subcounty]" vellum:nodeset="instance('heawards')/heawards_list/heawards[heasubcounty_id = #form/thesubcounty_label/the_subcounty]">
+					<label ref="id" />
+					<value ref="id" />
+				</itemset>
+			</select1>
+		</group>
+		<input vellum:ref="#form/name_of_respondent" ref="/data/name_of_respondent">
+			<label ref="jr:itext('name_of_respondent-label')" />
+		</input>
+		<input vellum:ref="#form/v_name_of_cooperative_society" ref="/data/v_name_of_cooperative_society">
+			<label ref="jr:itext('v_name_of_cooperative_society-label')" />
+		</input>
+		<input vellum:ref="#form/position_in_coop" ref="/data/position_in_coop">
+			<label ref="jr:itext('position_in_coop-label')" />
+		</input>
+		<input vellum:ref="#form/vii_which_year_was_cooperative_society_established" ref="/data/vii_which_year_was_cooperative_society_established">
+			<label ref="jr:itext('vii_which_year_was_cooperative_society_established-label')" />
+		</input>
+		<input vellum:ref="#form/what_are_the_total_number_beekeepers_in_the_county" ref="/data/what_are_the_total_number_beekeepers_in_the_county">
+			<label ref="jr:itext('what_are_the_total_number_beekeepers_in_the_county-label')" />
+		</input>
+		<input vellum:ref="#form/how_many_male_coop" ref="/data/how_many_male_coop">
+			<label ref="jr:itext('how_many_male_coop-label')" />
+		</input>
+		<input vellum:ref="#form/how_many_female_coop" ref="/data/how_many_female_coop">
+			<label ref="jr:itext('how_many_female_coop-label')" />
+		</input>
+		<input vellum:ref="#form/how_many_members_does_the_cooperative_has_at_the_moment" ref="/data/how_many_members_does_the_cooperative_has_at_the_moment">
+			<label ref="jr:itext('how_many_members_does_the_cooperative_has_at_the_moment-label')" />
+		</input>
+		<input vellum:ref="#form/how_many_male_coop_current" ref="/data/how_many_male_coop_current">
+			<label ref="jr:itext('how_many_male_coop_current-label')" />
+		</input>
+		<input vellum:ref="#form/how_many_female_coop_current" ref="/data/how_many_female_coop_current">
+			<label ref="jr:itext('how_many_female_coop_current-label')" />
+		</input>
+		<select1 vellum:ref="#form/how_do_you_evaluate_the_members_of_the_cooperative_from_year_to_year" ref="/data/how_do_you_evaluate_the_members_of_the_cooperative_from_year_to_year">
+			<label ref="jr:itext('how_do_you_evaluate_the_members_of_the_cooperative_from_year_to_year-label')" />
+			<item>
+				<label ref="jr:itext('how_do_you_evaluate_the_members_of_the_cooperative_from_year_to_year-increasing-label')" />
+				<value>increasing</value>
+			</item>
+			<item>
+				<label ref="jr:itext('how_do_you_evaluate_the_members_of_the_cooperative_from_year_to_year-decreasing-label')" />
+				<value>decreasing</value>
+			</item>
+			<item>
+				<label ref="jr:itext('how_do_you_evaluate_the_members_of_the_cooperative_from_year_to_year-remain_the_same-label')" />
+				<value>remain_the_same</value>
+			</item>
+		</select1>
+		<input vellum:ref="#form/for_all_give_the_reason" ref="/data/for_all_give_the_reason">
+			<label ref="jr:itext('for_all_give_the_reason-label')" />
+		</input>
+		<input vellum:ref="#form/what_are_the_major_problems_do_member_beekeepers_have" ref="/data/what_are_the_major_problems_do_member_beekeepers_have">
+			<label ref="jr:itext('what_are_the_major_problems_do_member_beekeepers_have-label')" />
+		</input>
+		<input vellum:ref="#form/which_problems_were_solved_by_the_beekeepers_cooperative" ref="/data/which_problems_were_solved_by_the_beekeepers_cooperative">
+			<label ref="jr:itext('which_problems_were_solved_by_the_beekeepers_cooperative-label')" />
+		</input>
+		<select1 vellum:ref="#form/are_there_members_dropout" ref="/data/are_there_members_dropout">
+			<label ref="jr:itext('are_there_members_dropout-label')" />
+			<item>
+				<label ref="jr:itext('are_there_members_dropout-yes-label')" />
+				<value>yes</value>
+			</item>
+			<item>
+				<label ref="jr:itext('are_there_members_dropout-no-label')" />
+				<value>no</value>
+			</item>
+		</select1>
+		<input vellum:ref="#form/how_many_was_the_initial_capital_of_the_cooperative" ref="/data/how_many_was_the_initial_capital_of_the_cooperative">
+			<label ref="jr:itext('how_many_was_the_initial_capital_of_the_cooperative-label')" />
+		</input>
+		<input vellum:ref="#form/how_many_capitals_do_the_cooperative_currently_has" ref="/data/how_many_capitals_do_the_cooperative_currently_has">
+			<label ref="jr:itext('how_many_capitals_do_the_cooperative_currently_has-label')" />
+		</input>
+		<input vellum:ref="#form/how_many_kg_of_honey_does_the_cooperative_collect_per_year_from_its_members" ref="/data/how_many_kg_of_honey_does_the_cooperative_collect_per_year_from_its_members">
+			<label ref="jr:itext('how_many_kg_of_honey_does_the_cooperative_collect_per_year_from_its_members-label')" />
+		</input>
+		<select1 vellum:ref="#form/how_do_you_observe_an_average_honey_production_per_hive_compare_to_the_aver" ref="/data/how_do_you_observe_an_average_honey_production_per_hive_compare_to_the_aver">
+			<label ref="jr:itext('how_do_you_observe_an_average_honey_production_per_hive_compare_to_the_aver-label')" />
+			<item>
+				<label ref="jr:itext('how_do_you_observe_an_average_honey_production_per_hive_compare_to_the_aver-increasing-label')" />
+				<value>increasing</value>
+			</item>
+			<item>
+				<label ref="jr:itext('how_do_you_observe_an_average_honey_production_per_hive_compare_to_the_aver-decreasing-label')" />
+				<value>decreasing</value>
+			</item>
+			<item>
+				<label ref="jr:itext('how_do_you_observe_an_average_honey_production_per_hive_compare_to_the_aver-remain_the_same-label')" />
+				<value>remain_the_same</value>
+			</item>
+		</select1>
+		<input vellum:ref="#form/for_your_answer_give_the_reason" ref="/data/for_your_answer_give_the_reason">
+			<label ref="jr:itext('for_your_answer_give_the_reason-label')" />
+		</input>
+		<select vellum:ref="#form/how_does_the_cooperative_evaluate_average_dividends_to_the_members_from_yea" ref="/data/how_does_the_cooperative_evaluate_average_dividends_to_the_members_from_yea">
+			<label ref="jr:itext('how_does_the_cooperative_evaluate_average_dividends_to_the_members_from_yea-label')" />
+			<item>
+				<label ref="jr:itext('how_does_the_cooperative_evaluate_average_dividends_to_the_members_from_yea-increasing-label')" />
+				<value>increasing</value>
+			</item>
+			<item>
+				<label ref="jr:itext('how_does_the_cooperative_evaluate_average_dividends_to_the_members_from_yea-decreasing-label')" />
+				<value>decreasing</value>
+			</item>
+			<item>
+				<label ref="jr:itext('how_does_the_cooperative_evaluate_average_dividends_to_the_members_from_yea-remain_the_constant-label')" />
+				<value>remain_the_constant</value>
+			</item>
+			<item>
+				<label ref="jr:itext('how_does_the_cooperative_evaluate_average_dividends_to_the_members_from_yea-others_specify-label')" />
+				<value>others_specify</value>
+			</item>
+		</select>
+		<input vellum:ref="#form/what_was_the_main_objective_s_to_establish_the_beekeepers_cooperative" ref="/data/what_was_the_main_objective_s_to_establish_the_beekeepers_cooperative">
+			<label ref="jr:itext('what_was_the_main_objective_s_to_establish_the_beekeepers_cooperative-label')" />
+		</input>
+		<input vellum:ref="#form/how_is_the_success_of_the_cooperative_in_achieving_its_objective" ref="/data/how_is_the_success_of_the_cooperative_in_achieving_its_objective">
+			<label ref="jr:itext('how_is_the_success_of_the_cooperative_in_achieving_its_objective-label')" />
+		</input>
+		<select vellum:ref="#form/what_problems_do_the_cooperative_faced_to_achieve_its_objective" ref="/data/what_problems_do_the_cooperative_faced_to_achieve_its_objective">
+			<label ref="jr:itext('what_problems_do_the_cooperative_faced_to_achieve_its_objective-label')" />
+			<item>
+				<label ref="jr:itext('what_problems_do_the_cooperative_faced_to_achieve_its_objective-shortage_of_budget-label')" />
+				<value>shortage_of_budget</value>
+			</item>
+			<item>
+				<label ref="jr:itext('what_problems_do_the_cooperative_faced_to_achieve_its_objective-low_members_participation-label')" />
+				<value>low_members_participation</value>
+			</item>
+			<item>
+				<label ref="jr:itext('what_problems_do_the_cooperative_faced_to_achieve_its_objective-high_turn_of_members-label')" />
+				<value>high_turn_of_members</value>
+			</item>
+			<item>
+				<label ref="jr:itext('what_problems_do_the_cooperative_faced_to_achieve_its_objective-others-label')" />
+				<value>others</value>
+			</item>
+		</select>
+		<input vellum:ref="#form/where_does_the_cooperative_get_support_for_its_business" ref="/data/where_does_the_cooperative_get_support_for_its_business">
+			<label ref="jr:itext('where_does_the_cooperative_get_support_for_its_business-label')" />
+		</input>
+		<input vellum:ref="#form/what_is_your_comment_on_support_you_are_currently_getting_from_different_so" ref="/data/what_is_your_comment_on_support_you_are_currently_getting_from_different_so">
+			<label ref="jr:itext('what_is_your_comment_on_support_you_are_currently_getting_from_different_so-label')" />
+		</input>
+		<input vellum:ref="#form/what_kinds_of_services_does_the_cooperative_give_for_its_members" ref="/data/what_kinds_of_services_does_the_cooperative_give_for_its_members">
+			<label ref="jr:itext('what_kinds_of_services_does_the_cooperative_give_for_its_members-label')" />
+		</input>
+		<select vellum:ref="#form/what_is_the_role_of_the_following_stakeholders_in_honey_value_chain_a_farme" ref="/data/what_is_the_role_of_the_following_stakeholders_in_honey_value_chain_a_farme">
+			<label ref="jr:itext('what_is_the_role_of_the_following_stakeholders_in_honey_value_chain_a_farme-label')" />
+			<item>
+				<label ref="jr:itext('what_is_the_role_of_the_following_stakeholders_in_honey_value_chain_a_farme-honey_produces-label')" />
+				<value>honey_produces</value>
+			</item>
+			<item>
+				<label ref="jr:itext('what_is_the_role_of_the_following_stakeholders_in_honey_value_chain_a_farme-assembling-label')" />
+				<value>assembling</value>
+			</item>
+			<item>
+				<label ref="jr:itext('what_is_the_role_of_the_following_stakeholders_in_honey_value_chain_a_farme-processing_semi-processing-label')" />
+				<value>processing_semi-processing</value>
+			</item>
+			<item>
+				<label ref="jr:itext('what_is_the_role_of_the_following_stakeholders_in_honey_value_chain_a_farme-others-label')" />
+				<value>others</value>
+			</item>
+		</select>
+		<select vellum:ref="#form/what_is_the_role_of_the_following_stakeholders_in_honey_value_chain_b_beeke" ref="/data/what_is_the_role_of_the_following_stakeholders_in_honey_value_chain_b_beeke">
+			<label ref="jr:itext('what_is_the_role_of_the_following_stakeholders_in_honey_value_chain_b_beeke-label')" />
+			<item>
+				<label ref="jr:itext('what_is_the_role_of_the_following_stakeholders_in_honey_value_chain_b_beeke-training_and_input_supplying-label')" />
+				<value>training_and_input_supplying</value>
+			</item>
+			<item>
+				<label ref="jr:itext('what_is_the_role_of_the_following_stakeholders_in_honey_value_chain_b_beeke-collection_and_bulking-label')" />
+				<value>collection_and_bulking</value>
+			</item>
+			<item>
+				<label ref="jr:itext('what_is_the_role_of_the_following_stakeholders_in_honey_value_chain_b_beeke-grading-label')" />
+				<value>grading</value>
+			</item>
+			<item>
+				<label ref="jr:itext('what_is_the_role_of_the_following_stakeholders_in_honey_value_chain_b_beeke-final_processing-label')" />
+				<value>final_processing</value>
+			</item>
+			<item>
+				<label ref="jr:itext('what_is_the_role_of_the_following_stakeholders_in_honey_value_chain_b_beeke-packaging_and_distribution-label')" />
+				<value>packaging_and_distribution</value>
+			</item>
+			<item>
+				<label ref="jr:itext('what_is_the_role_of_the_following_stakeholders_in_honey_value_chain_b_beeke-whole_selling-label')" />
+				<value>whole_selling</value>
+			</item>
+			<item>
+				<label ref="jr:itext('what_is_the_role_of_the_following_stakeholders_in_honey_value_chain_b_beeke-retailing-label')" />
+				<value>retailing</value>
+			</item>
+			<item>
+				<label ref="jr:itext('what_is_the_role_of_the_following_stakeholders_in_honey_value_chain_b_beeke-others_specify-label')" />
+				<value>others_specify</value>
+			</item>
+		</select>
+		<select vellum:ref="#form/what_is_the_role_of_the_following_stakeholders_in_honey_value_chain_cngos" ref="/data/what_is_the_role_of_the_following_stakeholders_in_honey_value_chain_cngos">
+			<label ref="jr:itext('what_is_the_role_of_the_following_stakeholders_in_honey_value_chain_cngos-label')" />
+			<item>
+				<label ref="jr:itext('what_is_the_role_of_the_following_stakeholders_in_honey_value_chain_cngos-input_supply-label')" />
+				<value>input_supply</value>
+			</item>
+			<item>
+				<label ref="jr:itext('what_is_the_role_of_the_following_stakeholders_in_honey_value_chain_cngos-training-label')" />
+				<value>training</value>
+			</item>
+			<item>
+				<label ref="jr:itext('what_is_the_role_of_the_following_stakeholders_in_honey_value_chain_cngos-financial_supporting-label')" />
+				<value>financial_supporting</value>
+			</item>
+			<item>
+				<label ref="jr:itext('what_is_the_role_of_the_following_stakeholders_in_honey_value_chain_cngos-others-label')" />
+				<value>others</value>
+			</item>
+		</select>
+		<select vellum:ref="#form/what_is_the_role_of_the_following_stakeholders_in_honey_value_chain_d_count" ref="/data/what_is_the_role_of_the_following_stakeholders_in_honey_value_chain_d_count">
+			<label ref="jr:itext('what_is_the_role_of_the_following_stakeholders_in_honey_value_chain_d_count-label')" />
+			<item>
+				<label ref="jr:itext('what_is_the_role_of_the_following_stakeholders_in_honey_value_chain_d_count-market_information-label')" />
+				<value>market_information</value>
+			</item>
+			<item>
+				<label ref="jr:itext('what_is_the_role_of_the_following_stakeholders_in_honey_value_chain_d_count-training-label')" />
+				<value>training</value>
+			</item>
+			<item>
+				<label ref="jr:itext('what_is_the_role_of_the_following_stakeholders_in_honey_value_chain_d_count-input_supplying-label')" />
+				<value>input_supplying</value>
+			</item>
+			<item>
+				<label ref="jr:itext('what_is_the_role_of_the_following_stakeholders_in_honey_value_chain_d_count-others-label')" />
+				<value>others</value>
+			</item>
+		</select>
+		<select vellum:ref="#form/what_is_the_role_of_the_following_stakeholders_in_honey_value_chain_e_proce" ref="/data/what_is_the_role_of_the_following_stakeholders_in_honey_value_chain_e_proce">
+			<label ref="jr:itext('what_is_the_role_of_the_following_stakeholders_in_honey_value_chain_e_proce-label')" />
+			<item>
+				<label ref="jr:itext('what_is_the_role_of_the_following_stakeholders_in_honey_value_chain_e_proce-collection_and_bulking-label')" />
+				<value>collection_and_bulking</value>
+			</item>
+			<item>
+				<label ref="jr:itext('what_is_the_role_of_the_following_stakeholders_in_honey_value_chain_e_proce-processing-label')" />
+				<value>processing</value>
+			</item>
+			<item>
+				<label ref="jr:itext('what_is_the_role_of_the_following_stakeholders_in_honey_value_chain_e_proce-grading_and_labeling-label')" />
+				<value>grading_and_labeling</value>
+			</item>
+			<item>
+				<label ref="jr:itext('what_is_the_role_of_the_following_stakeholders_in_honey_value_chain_e_proce-retailing-label')" />
+				<value>retailing</value>
+			</item>
+			<item>
+				<label ref="jr:itext('what_is_the_role_of_the_following_stakeholders_in_honey_value_chain_e_proce-others-label')" />
+				<value>others</value>
+			</item>
+		</select>
+		<select vellum:ref="#form/export_companies" ref="/data/export_companies">
+			<label ref="jr:itext('export_companies-label')" />
+			<item>
+				<label ref="jr:itext('export_companies-input_supply-label')" />
+				<value>input_supply</value>
+			</item>
+			<item>
+				<label ref="jr:itext('export_companies-collection_and_processing-label')" />
+				<value>collection_and_processing</value>
+			</item>
+			<item>
+				<label ref="jr:itext('export_companies-grading_and_labeling-label')" />
+				<value>grading_and_labeling</value>
+			</item>
+			<item>
+				<label ref="jr:itext('export_companies-retailing-label')" />
+				<value>retailing</value>
+			</item>
+			<item>
+				<label ref="jr:itext('export_companies-others-label')" />
+				<value>others</value>
+			</item>
+		</select>
+		<input vellum:ref="#form/purchasing_selling_price_of_honey_purchasing_price_per_kg" ref="/data/purchasing_selling_price_of_honey_purchasing_price_per_kg">
+			<label ref="jr:itext('purchasing_selling_price_of_honey_purchasing_price_per_kg-label')" />
+		</input>
+		<input vellum:ref="#form/purchasing_selling_price_of_honey_selling_price_per_kg" ref="/data/purchasing_selling_price_of_honey_selling_price_per_kg">
+			<label ref="jr:itext('purchasing_selling_price_of_honey_selling_price_per_kg-label')" />
+		</input>
+		<input vellum:ref="#form/how_the_benefit_is_distributed_to_the_members_of_the_cooperative" ref="/data/how_the_benefit_is_distributed_to_the_members_of_the_cooperative">
+			<label ref="jr:itext('how_the_benefit_is_distributed_to_the_members_of_the_cooperative-label')" />
+		</input>
+		<select vellum:ref="#form/where_does_the_cooperative_sell_honey" ref="/data/where_does_the_cooperative_sell_honey">
+			<label ref="jr:itext('where_does_the_cooperative_sell_honey-label')" />
+			<item>
+				<label ref="jr:itext('where_does_the_cooperative_sell_honey-at_selling_unit_in_the_nearby_town-label')" />
+				<value>at_selling_unit_in_the_nearby_town</value>
+			</item>
+			<item>
+				<label ref="jr:itext('where_does_the_cooperative_sell_honey-at_big_city-label')" />
+				<value>at_big_city</value>
+			</item>
+			<item>
+				<label ref="jr:itext('where_does_the_cooperative_sell_honey-collection_and_processing_center-label')" />
+				<value>collection_and_processing_center</value>
+			</item>
+			<item>
+				<label ref="jr:itext('where_does_the_cooperative_sell_honey-others-label')" />
+				<value>others</value>
+			</item>
+		</select>
+		<input vellum:ref="#form/specify_others_coop_sell_hny" ref="/data/specify_others_coop_sell_hny">
+			<label ref="jr:itext('specify_others_coop_sell_hny-label')" />
+		</input>
+		<select vellum:ref="#form/from_where_does_the_cooperative_collects_the_honey" ref="/data/from_where_does_the_cooperative_collects_the_honey">
+			<label ref="jr:itext('from_where_does_the_cooperative_collects_the_honey-label')" />
+			<item>
+				<label ref="jr:itext('from_where_does_the_cooperative_collects_the_honey-a_from_the_members-label')" />
+				<value>a_from_the_members</value>
+			</item>
+			<item>
+				<label ref="jr:itext('from_where_does_the_cooperative_collects_the_honey-from_non-members-label')" />
+				<value>from_non-members</value>
+			</item>
+			<item>
+				<label ref="jr:itext('from_where_does_the_cooperative_collects_the_honey-from_traders-label')" />
+				<value>from_traders</value>
+			</item>
+			<item>
+				<label ref="jr:itext('from_where_does_the_cooperative_collects_the_honey-others-label')" />
+				<value>others</value>
+			</item>
+		</select>
+		<select vellum:ref="#form/who_are_your_main_customers" ref="/data/who_are_your_main_customers">
+			<label ref="jr:itext('who_are_your_main_customers-label')" />
+			<item>
+				<label ref="jr:itext('who_are_your_main_customers-local_consumers-label')" />
+				<value>local_consumers</value>
+			</item>
+			<item>
+				<label ref="jr:itext('who_are_your_main_customers-local_traders-label')" />
+				<value>local_traders</value>
+			</item>
+			<item>
+				<label ref="jr:itext('who_are_your_main_customers-local_drink_makers-label')" />
+				<value>local_drink_makers</value>
+			</item>
+			<item>
+				<label ref="jr:itext('who_are_your_main_customers-honey_exporters-label')" />
+				<value>honey_exporters</value>
+			</item>
+			<item>
+				<label ref="jr:itext('who_are_your_main_customers-foreign_market-label')" />
+				<value>foreign_market</value>
+			</item>
+			<item>
+				<label ref="jr:itext('who_are_your_main_customers-tourists-label')" />
+				<value>tourists</value>
+			</item>
+			<item>
+				<label ref="jr:itext('who_are_your_main_customers-others-label')" />
+				<value>others</value>
+			</item>
+		</select>
+		<select1 vellum:ref="#form/in_which_season_of_the_year_the_honey_collection_is_maximum" ref="/data/in_which_season_of_the_year_the_honey_collection_is_maximum">
+			<label ref="jr:itext('in_which_season_of_the_year_the_honey_collection_is_maximum-label')" />
+			<item>
+				<label ref="jr:itext('in_which_season_of_the_year_the_honey_collection_is_maximum-dry_season-label')" />
+				<value>dry_season</value>
+			</item>
+			<item>
+				<label ref="jr:itext('in_which_season_of_the_year_the_honey_collection_is_maximum-rain_season-label')" />
+				<value>rain_season</value>
+			</item>
+		</select1>
+		<input vellum:ref="#form/what_is_your_activity_in_the_rest_of_the_season" ref="/data/what_is_your_activity_in_the_rest_of_the_season">
+			<label ref="jr:itext('what_is_your_activity_in_the_rest_of_the_season-label')" />
+		</input>
+		<input vellum:ref="#form/what_are_the_major_constraints_and_opportunities_in_honey_marketing_in_your" ref="/data/what_are_the_major_constraints_and_opportunities_in_honey_marketing_in_your">
+			<label ref="jr:itext('what_are_the_major_constraints_and_opportunities_in_honey_marketing_in_your-label')" />
+		</input>
+		<input vellum:ref="#form/opportunities" ref="/data/opportunities">
+			<label ref="jr:itext('opportunities-label')" />
+		</input>
+		<input vellum:ref="#form/gps" ref="/data/gps">
+			<label ref="jr:itext('gps-label')" />
+		</input>
+		<trigger vellum:ref="#form/thanks_you" ref="/data/thanks_you" appearance="minimal">
+			<label ref="jr:itext('thanks_you-label')" />
+		</trigger>
+	</h:body>
+</h:html>

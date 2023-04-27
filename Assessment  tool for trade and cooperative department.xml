@@ -1,0 +1,223 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<h:html xmlns:h="http://www.w3.org/1999/xhtml" xmlns:orx="http://openrosa.org/jr/xforms" xmlns="http://www.w3.org/2002/xforms" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:jr="http://openrosa.org/javarosa" xmlns:vellum="http://commcarehq.org/xforms/vellum">
+	<h:head>
+		<h:title>Assessment  tool for trade and cooperative department</h:title>
+		<model>
+			<instance>
+				<data xmlns:jrm="http://dev.commcarehq.org/jr/xforms" xmlns="http://openrosa.org/formdesigner/B7B602CB-5E5A-4D57-A690-6317720FBC2B" uiVersion="1" version="1" name="Assessment  tool for trade and cooperative department">
+					<gps />
+					<Name_of_enumerator />
+					<date_of_the_interview />
+					<The_CountyLabel>
+						<the_county />
+					</The_CountyLabel>
+					<thesubcounty_label>
+						<the_subcounty />
+					</thesubcounty_label>
+					<ward_details>
+						<the_ward />
+					</ward_details>
+					<name_of_respondent />
+					<gender />
+					<position />
+					<what_kinds_of_support_do_you_give_to_beekeeping_and_honey_producer_cooperat />
+					<what_support_do_you_give_to_beekeeper_farmers_in_order_to_improve_their_pro />
+					<how_are_beekeepers_cooperatives_organized_in_your_county />
+					<what_do_you_think_the_reason_why_most_smallholder_beekeepers_do_not_want_jo />
+					<how_many_beekeepers_cooperatives_are_established_in_your_county />
+					<what_are_the_criterial_to_be_membership_of_beekeepers_cooperatives />
+					<how_do_you_control_the_activities_of_beekeepers_cooperatives />
+					<thank_you />
+				</data>
+			</instance>
+			<instance src="jr://fixture/item-list:heacounty" id="heacounty" />
+			<instance src="jr://fixture/item-list:heasubcounty" id="heasubcounty" />
+			<instance src="jr://fixture/item-list:heawards" id="heawards" />
+			<instance src="jr://instance/casedb" id="casedb" />
+			<instance src="jr://instance/session" id="commcaresession" />
+			<bind vellum:nodeset="#form/gps" nodeset="/data/gps" type="geopoint" required="true()" />
+			<bind vellum:nodeset="#form/Name_of_enumerator" nodeset="/data/Name_of_enumerator" vellum:calculate="#user/username" calculate="instance('casedb')/casedb/case[@case_type = 'commcare-user'][hq_user_id = instance('commcaresession')/session/context/userid]/username" />
+			<bind vellum:nodeset="#form/date_of_the_interview" nodeset="/data/date_of_the_interview" type="xsd:date" constraint=". = today()" required="true()" />
+			<bind vellum:nodeset="#form/The_CountyLabel" nodeset="/data/The_CountyLabel" />
+			<bind vellum:nodeset="#form/The_CountyLabel/the_county" nodeset="/data/The_CountyLabel/the_county" required="true()" />
+			<bind vellum:nodeset="#form/thesubcounty_label" nodeset="/data/thesubcounty_label" />
+			<bind vellum:nodeset="#form/thesubcounty_label/the_subcounty" nodeset="/data/thesubcounty_label/the_subcounty" required="true()" />
+			<bind vellum:nodeset="#form/ward_details" nodeset="/data/ward_details" />
+			<bind vellum:nodeset="#form/ward_details/the_ward" nodeset="/data/ward_details/the_ward" required="true()" />
+			<bind vellum:nodeset="#form/name_of_respondent" nodeset="/data/name_of_respondent" type="xsd:string" required="true()" />
+			<bind vellum:nodeset="#form/gender" nodeset="/data/gender" required="true()" />
+			<bind vellum:nodeset="#form/position" nodeset="/data/position" type="xsd:string" required="true()" />
+			<bind vellum:nodeset="#form/what_kinds_of_support_do_you_give_to_beekeeping_and_honey_producer_cooperat" nodeset="/data/what_kinds_of_support_do_you_give_to_beekeeping_and_honey_producer_cooperat" type="xsd:string" required="true()" />
+			<bind vellum:nodeset="#form/what_support_do_you_give_to_beekeeper_farmers_in_order_to_improve_their_pro" nodeset="/data/what_support_do_you_give_to_beekeeper_farmers_in_order_to_improve_their_pro" type="xsd:string" required="true()" />
+			<bind vellum:nodeset="#form/how_are_beekeepers_cooperatives_organized_in_your_county" nodeset="/data/how_are_beekeepers_cooperatives_organized_in_your_county" type="xsd:string" required="true()" />
+			<bind vellum:nodeset="#form/what_do_you_think_the_reason_why_most_smallholder_beekeepers_do_not_want_jo" nodeset="/data/what_do_you_think_the_reason_why_most_smallholder_beekeepers_do_not_want_jo" type="xsd:string" required="true()" />
+			<bind vellum:nodeset="#form/how_many_beekeepers_cooperatives_are_established_in_your_county" nodeset="/data/how_many_beekeepers_cooperatives_are_established_in_your_county" type="xsd:int" required="true()" />
+			<bind vellum:nodeset="#form/what_are_the_criterial_to_be_membership_of_beekeepers_cooperatives" nodeset="/data/what_are_the_criterial_to_be_membership_of_beekeepers_cooperatives" type="xsd:string" required="true()" />
+			<bind vellum:nodeset="#form/how_do_you_control_the_activities_of_beekeepers_cooperatives" nodeset="/data/how_do_you_control_the_activities_of_beekeepers_cooperatives" type="xsd:string" required="true()" />
+			<bind vellum:nodeset="#form/thank_you" nodeset="/data/thank_you" />
+			<itext>
+				<translation lang="en" default="">
+					<text id="gps-label">
+						<value>GPS</value>
+					</text>
+					<text id="date_of_the_interview-label">
+						<value>Date of the interview</value>
+					</text>
+					<text id="The_CountyLabel-label">
+						<value>The County Selection</value>
+						<value form="markdown">The County Selection</value>
+					</text>
+					<text id="The_CountyLabel/the_county-label">
+						<value>The County is :</value>
+					</text>
+					<text id="thesubcounty_label-label">
+						<value>The Sub County Selection</value>
+						<value form="markdown">The Sub County Selection</value>
+					</text>
+					<text id="thesubcounty_label/the_subcounty-label">
+						<value>The Sub-County</value>
+						<value form="markdown">The Sub-County</value>
+					</text>
+					<text id="ward_details-label">
+						<value>The Ward Name Selection</value>
+						<value form="markdown">The Ward Name Selection</value>
+					</text>
+					<text id="ward_details/the_ward-label">
+						<value>The Ward</value>
+					</text>
+					<text id="name_of_respondent-label">
+						<value>Name of respondent</value>
+					</text>
+					<text id="gender-label">
+						<value>Gender</value>
+					</text>
+					<text id="gender-male-label">
+						<value>Male</value>
+					</text>
+					<text id="gender-female-label">
+						<value>Female</value>
+					</text>
+					<text id="position-label">
+						<value>Position</value>
+					</text>
+					<text id="what_kinds_of_support_do_you_give_to_beekeeping_and_honey_producer_cooperat-label">
+						<value>1. What kinds of support do you give to beekeeping and honey producer cooperatives?</value>
+						<value form="markdown">1. What kinds of support do you give to beekeeping and honey producer cooperatives?</value>
+					</text>
+					<text id="what_support_do_you_give_to_beekeeper_farmers_in_order_to_improve_their_pro-label">
+						<value>2. What support do you give to beekeeper farmers in order to improve their
+products and market competitiveness?</value>
+						<value form="markdown">2. What support do you give to beekeeper farmers in order to improve their
+products and market competitiveness?</value>
+					</text>
+					<text id="how_are_beekeepers_cooperatives_organized_in_your_county-label">
+						<value>3. How are beekeepers cooperatives organized in your county?</value>
+						<value form="markdown">3. How are beekeepers cooperatives organized in your county?</value>
+					</text>
+					<text id="what_do_you_think_the_reason_why_most_smallholder_beekeepers_do_not_want_jo-label">
+						<value>4. What do you think the reason why most smallholder beekeepers do not want join to
+Beekeepers cooperatives?</value>
+						<value form="markdown">4. What do you think the reason why most smallholder beekeepers do not want join to
+Beekeepers cooperatives?</value>
+					</text>
+					<text id="how_many_beekeepers_cooperatives_are_established_in_your_county-label">
+						<value>5. How many beekeepers cooperatives are established in your county?</value>
+						<value form="markdown">5. How many beekeepers cooperatives are established in your county?</value>
+					</text>
+					<text id="what_are_the_criterial_to_be_membership_of_beekeepers_cooperatives-label">
+						<value>8. What are the criterial to be membership of beekeepers cooperatives?</value>
+						<value form="markdown">8. What are the criterial to be membership of beekeepers cooperatives?</value>
+					</text>
+					<text id="how_do_you_control_the_activities_of_beekeepers_cooperatives-label">
+						<value>10. How do you control the activities of beekeepers cooperatives?</value>
+						<value form="markdown">10. How do you control the activities of beekeepers cooperatives?</value>
+					</text>
+					<text id="thank_you-label">
+						<value>Thank you.</value>
+					</text>
+				</translation>
+			</itext>
+		</model>
+		<vellum:hashtags>{&quot;#user/username&quot;:null}</vellum:hashtags>
+		<vellum:hashtagTransforms>{&quot;prefixes&quot;:{&quot;#user/&quot;:&quot;instance('casedb')/casedb/case[@case_type = 'commcare-user'][hq_user_id = instance('commcaresession')/session/context/userid]/&quot;}}</vellum:hashtagTransforms>
+	</h:head>
+	<h:body>
+		<input vellum:ref="#form/gps" ref="/data/gps">
+			<label ref="jr:itext('gps-label')" />
+		</input>
+		<input vellum:ref="#form/date_of_the_interview" ref="/data/date_of_the_interview">
+			<label ref="jr:itext('date_of_the_interview-label')" />
+		</input>
+		<group vellum:ref="#form/The_CountyLabel" ref="/data/The_CountyLabel" appearance="field-list">
+			<label ref="jr:itext('The_CountyLabel-label')" />
+			<select1 vellum:ref="#form/The_CountyLabel/the_county" ref="/data/The_CountyLabel/the_county">
+				<label ref="jr:itext('The_CountyLabel/the_county-label')" />
+				<itemset nodeset="instance('heacounty')/heacounty_list/heacounty">
+					<label ref="id" />
+					<value ref="id" />
+				</itemset>
+			</select1>
+		</group>
+		<group vellum:ref="#form/thesubcounty_label" ref="/data/thesubcounty_label" appearance="field-list">
+			<label ref="jr:itext('thesubcounty_label-label')" />
+			<select1 vellum:ref="#form/thesubcounty_label/the_subcounty" ref="/data/thesubcounty_label/the_subcounty">
+				<label ref="jr:itext('thesubcounty_label/the_subcounty-label')" />
+				<itemset nodeset="instance('heasubcounty')/heasubcounty_list/heasubcounty[heacounty_id = /data/The_CountyLabel/the_county]" vellum:nodeset="instance('heasubcounty')/heasubcounty_list/heasubcounty[heacounty_id = #form/The_CountyLabel/the_county]">
+					<label ref="id" />
+					<value ref="id" />
+				</itemset>
+			</select1>
+		</group>
+		<group vellum:ref="#form/ward_details" ref="/data/ward_details" appearance="field-list">
+			<label ref="jr:itext('ward_details-label')" />
+			<select1 vellum:ref="#form/ward_details/the_ward" ref="/data/ward_details/the_ward">
+				<label ref="jr:itext('ward_details/the_ward-label')" />
+				<itemset nodeset="instance('heawards')/heawards_list/heawards[heasubcounty_id = /data/thesubcounty_label/the_subcounty]" vellum:nodeset="instance('heawards')/heawards_list/heawards[heasubcounty_id = #form/thesubcounty_label/the_subcounty]">
+					<label ref="id" />
+					<value ref="id" />
+				</itemset>
+			</select1>
+		</group>
+		<input vellum:ref="#form/name_of_respondent" ref="/data/name_of_respondent">
+			<label ref="jr:itext('name_of_respondent-label')" />
+		</input>
+		<select1 vellum:ref="#form/gender" ref="/data/gender">
+			<label ref="jr:itext('gender-label')" />
+			<item>
+				<label ref="jr:itext('gender-male-label')" />
+				<value>male</value>
+			</item>
+			<item>
+				<label ref="jr:itext('gender-female-label')" />
+				<value>female</value>
+			</item>
+		</select1>
+		<input vellum:ref="#form/position" ref="/data/position">
+			<label ref="jr:itext('position-label')" />
+		</input>
+		<input vellum:ref="#form/what_kinds_of_support_do_you_give_to_beekeeping_and_honey_producer_cooperat" ref="/data/what_kinds_of_support_do_you_give_to_beekeeping_and_honey_producer_cooperat">
+			<label ref="jr:itext('what_kinds_of_support_do_you_give_to_beekeeping_and_honey_producer_cooperat-label')" />
+		</input>
+		<input vellum:ref="#form/what_support_do_you_give_to_beekeeper_farmers_in_order_to_improve_their_pro" ref="/data/what_support_do_you_give_to_beekeeper_farmers_in_order_to_improve_their_pro">
+			<label ref="jr:itext('what_support_do_you_give_to_beekeeper_farmers_in_order_to_improve_their_pro-label')" />
+		</input>
+		<input vellum:ref="#form/how_are_beekeepers_cooperatives_organized_in_your_county" ref="/data/how_are_beekeepers_cooperatives_organized_in_your_county">
+			<label ref="jr:itext('how_are_beekeepers_cooperatives_organized_in_your_county-label')" />
+		</input>
+		<input vellum:ref="#form/what_do_you_think_the_reason_why_most_smallholder_beekeepers_do_not_want_jo" ref="/data/what_do_you_think_the_reason_why_most_smallholder_beekeepers_do_not_want_jo">
+			<label ref="jr:itext('what_do_you_think_the_reason_why_most_smallholder_beekeepers_do_not_want_jo-label')" />
+		</input>
+		<input vellum:ref="#form/how_many_beekeepers_cooperatives_are_established_in_your_county" ref="/data/how_many_beekeepers_cooperatives_are_established_in_your_county">
+			<label ref="jr:itext('how_many_beekeepers_cooperatives_are_established_in_your_county-label')" />
+		</input>
+		<input vellum:ref="#form/what_are_the_criterial_to_be_membership_of_beekeepers_cooperatives" ref="/data/what_are_the_criterial_to_be_membership_of_beekeepers_cooperatives">
+			<label ref="jr:itext('what_are_the_criterial_to_be_membership_of_beekeepers_cooperatives-label')" />
+		</input>
+		<input vellum:ref="#form/how_do_you_control_the_activities_of_beekeepers_cooperatives" ref="/data/how_do_you_control_the_activities_of_beekeepers_cooperatives">
+			<label ref="jr:itext('how_do_you_control_the_activities_of_beekeepers_cooperatives-label')" />
+		</input>
+		<trigger vellum:ref="#form/thank_you" ref="/data/thank_you" appearance="minimal">
+			<label ref="jr:itext('thank_you-label')" />
+		</trigger>
+	</h:body>
+</h:html>

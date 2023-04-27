@@ -1,0 +1,447 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<h:html xmlns:h="http://www.w3.org/1999/xhtml" xmlns:orx="http://openrosa.org/jr/xforms" xmlns="http://www.w3.org/2002/xforms" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:jr="http://openrosa.org/javarosa" xmlns:vellum="http://commcarehq.org/xforms/vellum">
+	<h:head>
+		<h:title>Assessment for department of Livestock &amp; NRM</h:title>
+		<model>
+			<instance>
+				<data xmlns:jrm="http://dev.commcarehq.org/jr/xforms" xmlns="http://openrosa.org/formdesigner/524152AC-0E3C-4AD1-832F-781707EB0DBB" uiVersion="1" version="1" name="Assessment for department of Livestock &amp; NRM">
+					<interview_guideline_questionnaire_for_turkana_department_of_nrm_and_agricul />
+					<The_CountyLabel>
+						<the_county />
+					</The_CountyLabel>
+					<name />
+					<gender />
+					<position />
+					<what_are_the_total_number_beekeepers_in_the_county />
+					<how_many_male_beekeepers />
+					<how_many_female_beekeepers />
+					<what_is_the_total_number_of_bee_hives_in_the_county_in_2022 />
+					<number_of_log_hives />
+					<number_of_kenya_top_bar_hive />
+					<number_of_langstroth />
+					<frame_hive />
+					<number_of_box_hive />
+					<number_of_cab_hives />
+					<what_is_the_average_product_of_the_different_hives_in_the_county />
+					<average_kg_for_log_hives />
+					<average_kg_for_kenya_top_bar_hive_kg />
+					<average_kg_for_langstroth />
+					<average_kg_for_frame_hive />
+					<average_kg_for_box_hive />
+					<average_kg_for_cab_hives />
+					<what_is_the_trend_of_honey_production_for_the_last_five_years />
+					<for_your_answer_give_the_reason />
+					<what_major_problems_do_beekeepers_have />
+					<what_support_do_you_give_to_smallholder_beekeepers_to_improve_their_honey_p />
+					<do_you_think_farmers_cooperatives_can_improve_their_income_or_profits />
+					<explain />
+					<what_do_you_think_the_reason_why_most_beekeepers_do_not_want_to_participati />
+					<what_are_the_major_constraints_and_opportunities_in_honey_production_and_ma />
+					<a_what_are_the_major_constraints_and_opportunities_in_honey_production_and_ />
+					<gps />
+					<thank_you />
+				</data>
+			</instance>
+			<instance src="jr://fixture/item-list:heacounty" id="heacounty" />
+			<bind vellum:nodeset="#form/interview_guideline_questionnaire_for_turkana_department_of_nrm_and_agricul" nodeset="/data/interview_guideline_questionnaire_for_turkana_department_of_nrm_and_agricul" />
+			<bind vellum:nodeset="#form/The_CountyLabel" nodeset="/data/The_CountyLabel" />
+			<bind vellum:nodeset="#form/The_CountyLabel/the_county" nodeset="/data/The_CountyLabel/the_county" required="true()" />
+			<bind vellum:nodeset="#form/name" nodeset="/data/name" type="xsd:string" required="true()" />
+			<bind vellum:nodeset="#form/gender" nodeset="/data/gender" required="true()" />
+			<bind vellum:nodeset="#form/position" nodeset="/data/position" type="xsd:string" required="true()" />
+			<bind vellum:nodeset="#form/what_are_the_total_number_beekeepers_in_the_county" nodeset="/data/what_are_the_total_number_beekeepers_in_the_county" type="xsd:string" required="true()" />
+			<bind vellum:nodeset="#form/how_many_male_beekeepers" nodeset="/data/how_many_male_beekeepers" type="xsd:int" required="true()" />
+			<bind vellum:nodeset="#form/how_many_female_beekeepers" nodeset="/data/how_many_female_beekeepers" type="xsd:int" required="true()" />
+			<bind vellum:nodeset="#form/what_is_the_total_number_of_bee_hives_in_the_county_in_2022" nodeset="/data/what_is_the_total_number_of_bee_hives_in_the_county_in_2022" required="true()" />
+			<bind vellum:nodeset="#form/number_of_log_hives" nodeset="/data/number_of_log_hives" type="xsd:int" vellum:relevant="selected(#form/what_is_the_total_number_of_bee_hives_in_the_county_in_2022, 'log_hives')" relevant="selected(/data/what_is_the_total_number_of_bee_hives_in_the_county_in_2022, 'log_hives')" required="true()" />
+			<bind vellum:nodeset="#form/number_of_kenya_top_bar_hive" nodeset="/data/number_of_kenya_top_bar_hive" type="xsd:int" vellum:relevant="selected(#form/what_is_the_total_number_of_bee_hives_in_the_county_in_2022, 'kenya_top_bar_hive')" relevant="selected(/data/what_is_the_total_number_of_bee_hives_in_the_county_in_2022, 'kenya_top_bar_hive')" required="true()" />
+			<bind vellum:nodeset="#form/number_of_langstroth" nodeset="/data/number_of_langstroth" type="xsd:int" vellum:relevant="selected(#form/what_is_the_total_number_of_bee_hives_in_the_county_in_2022, 'langstroth')" relevant="selected(/data/what_is_the_total_number_of_bee_hives_in_the_county_in_2022, 'langstroth')" required="true()" />
+			<bind vellum:nodeset="#form/frame_hive" nodeset="/data/frame_hive" type="xsd:int" vellum:relevant="selected(#form/what_is_the_total_number_of_bee_hives_in_the_county_in_2022, 'frame_hive')" relevant="selected(/data/what_is_the_total_number_of_bee_hives_in_the_county_in_2022, 'frame_hive')" required="true()" />
+			<bind vellum:nodeset="#form/number_of_box_hive" nodeset="/data/number_of_box_hive" type="xsd:int" vellum:relevant="selected(#form/what_is_the_total_number_of_bee_hives_in_the_county_in_2022, 'box_hive')" relevant="selected(/data/what_is_the_total_number_of_bee_hives_in_the_county_in_2022, 'box_hive')" required="true()" />
+			<bind vellum:nodeset="#form/number_of_cab_hives" nodeset="/data/number_of_cab_hives" type="xsd:int" vellum:relevant="selected(#form/what_is_the_total_number_of_bee_hives_in_the_county_in_2022, 'cab_hive')" relevant="selected(/data/what_is_the_total_number_of_bee_hives_in_the_county_in_2022, 'cab_hive')" />
+			<bind vellum:nodeset="#form/what_is_the_average_product_of_the_different_hives_in_the_county" nodeset="/data/what_is_the_average_product_of_the_different_hives_in_the_county" required="true()" />
+			<bind vellum:nodeset="#form/average_kg_for_log_hives" nodeset="/data/average_kg_for_log_hives" type="xsd:double" vellum:relevant="selected(#form/what_is_the_average_product_of_the_different_hives_in_the_county, 'log_hives')" relevant="selected(/data/what_is_the_average_product_of_the_different_hives_in_the_county, 'log_hives')" required="true()" />
+			<bind vellum:nodeset="#form/average_kg_for_kenya_top_bar_hive_kg" nodeset="/data/average_kg_for_kenya_top_bar_hive_kg" type="xsd:double" vellum:relevant="selected(#form/what_is_the_average_product_of_the_different_hives_in_the_county, 'kenya_top_bar_hive')" relevant="selected(/data/what_is_the_average_product_of_the_different_hives_in_the_county, 'kenya_top_bar_hive')" required="true()" />
+			<bind vellum:nodeset="#form/average_kg_for_langstroth" nodeset="/data/average_kg_for_langstroth" type="xsd:double" vellum:relevant="selected(#form/what_is_the_average_product_of_the_different_hives_in_the_county, 'langstroth')" relevant="selected(/data/what_is_the_average_product_of_the_different_hives_in_the_county, 'langstroth')" required="true()" />
+			<bind vellum:nodeset="#form/average_kg_for_frame_hive" nodeset="/data/average_kg_for_frame_hive" type="xsd:int" vellum:relevant="selected(#form/what_is_the_average_product_of_the_different_hives_in_the_county, 'frame_hive')" relevant="selected(/data/what_is_the_average_product_of_the_different_hives_in_the_county, 'frame_hive')" required="true()" />
+			<bind vellum:nodeset="#form/average_kg_for_box_hive" nodeset="/data/average_kg_for_box_hive" type="xsd:int" vellum:relevant="selected(#form/what_is_the_average_product_of_the_different_hives_in_the_county, 'box_hive')" relevant="selected(/data/what_is_the_average_product_of_the_different_hives_in_the_county, 'box_hive')" required="true()" />
+			<bind vellum:nodeset="#form/average_kg_for_cab_hives" nodeset="/data/average_kg_for_cab_hives" type="xsd:int" vellum:relevant="selected(#form/what_is_the_average_product_of_the_different_hives_in_the_county, 'cab_hive')" relevant="selected(/data/what_is_the_average_product_of_the_different_hives_in_the_county, 'cab_hive')" required="true()" />
+			<bind vellum:nodeset="#form/what_is_the_trend_of_honey_production_for_the_last_five_years" nodeset="/data/what_is_the_trend_of_honey_production_for_the_last_five_years" required="true()" />
+			<bind vellum:nodeset="#form/for_your_answer_give_the_reason" nodeset="/data/for_your_answer_give_the_reason" type="xsd:string" vellum:relevant="#form/what_is_the_trend_of_honey_production_for_the_last_five_years != &quot;&quot;" relevant="/data/what_is_the_trend_of_honey_production_for_the_last_five_years != &quot;&quot;" required="true()" />
+			<bind vellum:nodeset="#form/what_major_problems_do_beekeepers_have" nodeset="/data/what_major_problems_do_beekeepers_have" type="xsd:string" required="true()" />
+			<bind vellum:nodeset="#form/what_support_do_you_give_to_smallholder_beekeepers_to_improve_their_honey_p" nodeset="/data/what_support_do_you_give_to_smallholder_beekeepers_to_improve_their_honey_p" type="xsd:string" required="true()" />
+			<bind vellum:nodeset="#form/do_you_think_farmers_cooperatives_can_improve_their_income_or_profits" nodeset="/data/do_you_think_farmers_cooperatives_can_improve_their_income_or_profits" />
+			<bind vellum:nodeset="#form/explain" nodeset="/data/explain" type="xsd:string" vellum:relevant="#form/do_you_think_farmers_cooperatives_can_improve_their_income_or_profits != &quot;&quot;" relevant="/data/do_you_think_farmers_cooperatives_can_improve_their_income_or_profits != &quot;&quot;" required="true()" />
+			<bind vellum:nodeset="#form/what_do_you_think_the_reason_why_most_beekeepers_do_not_want_to_participati" nodeset="/data/what_do_you_think_the_reason_why_most_beekeepers_do_not_want_to_participati" type="xsd:string" required="true()" />
+			<bind vellum:nodeset="#form/what_are_the_major_constraints_and_opportunities_in_honey_production_and_ma" nodeset="/data/what_are_the_major_constraints_and_opportunities_in_honey_production_and_ma" type="xsd:string" required="true()" />
+			<bind vellum:nodeset="#form/a_what_are_the_major_constraints_and_opportunities_in_honey_production_and_" nodeset="/data/a_what_are_the_major_constraints_and_opportunities_in_honey_production_and_" type="xsd:string" required="true()" />
+			<bind vellum:nodeset="#form/gps" nodeset="/data/gps" type="geopoint" required="true()" />
+			<bind vellum:nodeset="#form/thank_you" nodeset="/data/thank_you" />
+			<itext>
+				<translation lang="en" default="">
+					<text id="interview_guideline_questionnaire_for_turkana_department_of_nrm_and_agricul-label">
+						<value>Interview guideline questionnaire for Turkana department of NRM and Agriculture, Pastoral Economy, and Fisheries</value>
+					</text>
+					<text id="The_CountyLabel-label">
+						<value>The County Selection</value>
+						<value form="markdown">The County Selection</value>
+					</text>
+					<text id="The_CountyLabel/the_county-label">
+						<value>The County is :</value>
+					</text>
+					<text id="name-label">
+						<value>Name</value>
+					</text>
+					<text id="gender-label">
+						<value>Gender</value>
+					</text>
+					<text id="gender-male-label">
+						<value>Male</value>
+					</text>
+					<text id="gender-female-label">
+						<value>Female</value>
+					</text>
+					<text id="position-label">
+						<value>Position</value>
+					</text>
+					<text id="what_are_the_total_number_beekeepers_in_the_county-label">
+						<value>1. What are the total number beekeepers in the County?</value>
+						<value form="markdown">1. What are the total number beekeepers in the County?</value>
+					</text>
+					<text id="how_many_male_beekeepers-label">
+						<value>How many Male</value>
+						<value form="markdown">How many Male</value>
+					</text>
+					<text id="how_many_female_beekeepers-label">
+						<value>How many Female</value>
+					</text>
+					<text id="what_is_the_total_number_of_bee_hives_in_the_county_in_2022-label">
+						<value>2. What is the total number of bee hives in the County in 2022?</value>
+						<value form="markdown">2. What is the total number of bee hives in the County in 2022?</value>
+					</text>
+					<text id="what_is_the_total_number_of_bee_hives_in_the_county_in_2022-log_hives-label">
+						<value>Log hives</value>
+					</text>
+					<text id="what_is_the_total_number_of_bee_hives_in_the_county_in_2022-kenya_top_bar_hive-label">
+						<value>Kenya Top Bar Hive</value>
+					</text>
+					<text id="what_is_the_total_number_of_bee_hives_in_the_county_in_2022-langstroth-label">
+						<value>Langstroth</value>
+					</text>
+					<text id="what_is_the_total_number_of_bee_hives_in_the_county_in_2022-frame_hive-label">
+						<value>Frame hive</value>
+					</text>
+					<text id="what_is_the_total_number_of_bee_hives_in_the_county_in_2022-box_hive-label">
+						<value>Box Hive</value>
+					</text>
+					<text id="what_is_the_total_number_of_bee_hives_in_the_county_in_2022-cab_hive-label">
+						<value>CAB Hive</value>
+					</text>
+					<text id="number_of_log_hives-label">
+						<value>Number of Log hives</value>
+					</text>
+					<text id="number_of_kenya_top_bar_hive-label">
+						<value> Number of Kenya Top Bar Hive</value>
+					</text>
+					<text id="number_of_langstroth-label">
+						<value>Number of Langstroth</value>
+					</text>
+					<text id="frame_hive-label">
+						<value>Number of Frame hive</value>
+					</text>
+					<text id="number_of_box_hive-label">
+						<value>Number of Box hive</value>
+					</text>
+					<text id="number_of_cab_hives-label">
+						<value>Number of CAB Hives</value>
+					</text>
+					<text id="what_is_the_average_product_of_the_different_hives_in_the_county-label">
+						<value>3. What is the average product of the different hives in the County?</value>
+						<value form="markdown">3. What is the average product of the different hives in the County?</value>
+					</text>
+					<text id="what_is_the_average_product_of_the_different_hives_in_the_county-log_hives-label">
+						<value>Log hives</value>
+					</text>
+					<text id="what_is_the_average_product_of_the_different_hives_in_the_county-kenya_top_bar_hive-label">
+						<value>Kenya Top Bar Hive</value>
+					</text>
+					<text id="what_is_the_average_product_of_the_different_hives_in_the_county-langstroth-label">
+						<value>Langstroth</value>
+					</text>
+					<text id="what_is_the_average_product_of_the_different_hives_in_the_county-frame_hive-label">
+						<value>Frame hive</value>
+					</text>
+					<text id="what_is_the_average_product_of_the_different_hives_in_the_county-box_hive-label">
+						<value>Box Hive</value>
+					</text>
+					<text id="what_is_the_average_product_of_the_different_hives_in_the_county-cab_hive-label">
+						<value>CAB Hive</value>
+					</text>
+					<text id="average_kg_for_log_hives-label">
+						<value>Average kg for Log hives</value>
+					</text>
+					<text id="average_kg_for_kenya_top_bar_hive_kg-label">
+						<value>Average kg for Kenya Top Bar Hive Kg</value>
+					</text>
+					<text id="average_kg_for_langstroth-label">
+						<value>Average kg for Langstroth</value>
+					</text>
+					<text id="average_kg_for_frame_hive-label">
+						<value>Average kg for Frame hive</value>
+					</text>
+					<text id="average_kg_for_box_hive-label">
+						<value>Average kg for Box hive</value>
+					</text>
+					<text id="average_kg_for_cab_hives-label">
+						<value>Average kg for CAB Hives</value>
+					</text>
+					<text id="what_is_the_trend_of_honey_production_for_the_last_five_years-label">
+						<value>4. What is the trend of honey production for the last five years?</value>
+						<value form="markdown">4. What is the trend of honey production for the last five years?</value>
+					</text>
+					<text id="what_is_the_trend_of_honey_production_for_the_last_five_years-increase-label">
+						<value>Increase</value>
+					</text>
+					<text id="what_is_the_trend_of_honey_production_for_the_last_five_years-decrease-label">
+						<value>Decrease</value>
+					</text>
+					<text id="what_is_the_trend_of_honey_production_for_the_last_five_years-remains_constant-label">
+						<value>Remains Constant</value>
+					</text>
+					<text id="for_your_answer_give_the_reason-label">
+						<value>For your answer give the reason</value>
+					</text>
+					<text id="what_major_problems_do_beekeepers_have-label">
+						<value>5. What major problems do beekeepers have?</value>
+						<value form="markdown">5. What major problems do beekeepers have?</value>
+					</text>
+					<text id="what_support_do_you_give_to_smallholder_beekeepers_to_improve_their_honey_p-label">
+						<value>6. What support do you give to smallholder beekeepers to improve their honey production?</value>
+						<value form="markdown">6. What support do you give to smallholder beekeepers to improve their honey production?</value>
+					</text>
+					<text id="do_you_think_farmers_cooperatives_can_improve_their_income_or_profits-label">
+						<value>8. Do you think farmers’ cooperatives can improve their income or profits?</value>
+						<value form="markdown">8. Do you think farmers’ cooperatives can improve their income or profits?</value>
+					</text>
+					<text id="do_you_think_farmers_cooperatives_can_improve_their_income_or_profits-yes-label">
+						<value>Yes</value>
+					</text>
+					<text id="do_you_think_farmers_cooperatives_can_improve_their_income_or_profits-no-label">
+						<value>No</value>
+					</text>
+					<text id="explain-label">
+						<value>Explain </value>
+					</text>
+					<text id="what_do_you_think_the_reason_why_most_beekeepers_do_not_want_to_participati-label">
+						<value>9. What do you think the reason why most beekeepers do not want to participating in the
+honey producers cooperatives?</value>
+						<value form="markdown">9. What do you think the reason why most beekeepers do not want to participating in the
+honey producers cooperatives?</value>
+					</text>
+					<text id="what_are_the_major_constraints_and_opportunities_in_honey_production_and_ma-label">
+						<value>10. What are the major constraints and opportunities in honey production and marketing in
+your locality? **Constraints:**</value>
+						<value form="markdown">10. What are the major constraints and opportunities in honey production and marketing in
+your locality? **Constraints:**</value>
+					</text>
+					<text id="a_what_are_the_major_constraints_and_opportunities_in_honey_production_and_-label">
+						<value>10a. What are the major constraints and opportunities in honey production and marketing in
+your locality?  **Opportunities**</value>
+						<value form="markdown">10a. What are the major constraints and opportunities in honey production and marketing in
+your locality?  **Opportunities**</value>
+					</text>
+					<text id="gps-label">
+						<value>GPS coordinates</value>
+					</text>
+					<text id="thank_you-label">
+						<value>Thank you</value>
+					</text>
+				</translation>
+			</itext>
+		</model>
+	</h:head>
+	<h:body>
+		<trigger vellum:ref="#form/interview_guideline_questionnaire_for_turkana_department_of_nrm_and_agricul" ref="/data/interview_guideline_questionnaire_for_turkana_department_of_nrm_and_agricul" appearance="minimal">
+			<label ref="jr:itext('interview_guideline_questionnaire_for_turkana_department_of_nrm_and_agricul-label')" />
+		</trigger>
+		<group vellum:ref="#form/The_CountyLabel" ref="/data/The_CountyLabel" appearance="field-list">
+			<label ref="jr:itext('The_CountyLabel-label')" />
+			<select1 vellum:ref="#form/The_CountyLabel/the_county" ref="/data/The_CountyLabel/the_county">
+				<label ref="jr:itext('The_CountyLabel/the_county-label')" />
+				<itemset nodeset="instance('heacounty')/heacounty_list/heacounty">
+					<label ref="name" />
+					<value ref="name" />
+				</itemset>
+			</select1>
+		</group>
+		<input vellum:ref="#form/name" ref="/data/name">
+			<label ref="jr:itext('name-label')" />
+		</input>
+		<select1 vellum:ref="#form/gender" ref="/data/gender">
+			<label ref="jr:itext('gender-label')" />
+			<item>
+				<label ref="jr:itext('gender-male-label')" />
+				<value>male</value>
+			</item>
+			<item>
+				<label ref="jr:itext('gender-female-label')" />
+				<value>female</value>
+			</item>
+		</select1>
+		<input vellum:ref="#form/position" ref="/data/position">
+			<label ref="jr:itext('position-label')" />
+		</input>
+		<input vellum:ref="#form/what_are_the_total_number_beekeepers_in_the_county" ref="/data/what_are_the_total_number_beekeepers_in_the_county">
+			<label ref="jr:itext('what_are_the_total_number_beekeepers_in_the_county-label')" />
+		</input>
+		<input vellum:ref="#form/how_many_male_beekeepers" ref="/data/how_many_male_beekeepers">
+			<label ref="jr:itext('how_many_male_beekeepers-label')" />
+		</input>
+		<input vellum:ref="#form/how_many_female_beekeepers" ref="/data/how_many_female_beekeepers">
+			<label ref="jr:itext('how_many_female_beekeepers-label')" />
+		</input>
+		<select vellum:ref="#form/what_is_the_total_number_of_bee_hives_in_the_county_in_2022" ref="/data/what_is_the_total_number_of_bee_hives_in_the_county_in_2022">
+			<label ref="jr:itext('what_is_the_total_number_of_bee_hives_in_the_county_in_2022-label')" />
+			<item>
+				<label ref="jr:itext('what_is_the_total_number_of_bee_hives_in_the_county_in_2022-log_hives-label')" />
+				<value>log_hives</value>
+			</item>
+			<item>
+				<label ref="jr:itext('what_is_the_total_number_of_bee_hives_in_the_county_in_2022-kenya_top_bar_hive-label')" />
+				<value>kenya_top_bar_hive</value>
+			</item>
+			<item>
+				<label ref="jr:itext('what_is_the_total_number_of_bee_hives_in_the_county_in_2022-langstroth-label')" />
+				<value>langstroth</value>
+			</item>
+			<item>
+				<label ref="jr:itext('what_is_the_total_number_of_bee_hives_in_the_county_in_2022-frame_hive-label')" />
+				<value>frame_hive</value>
+			</item>
+			<item>
+				<label ref="jr:itext('what_is_the_total_number_of_bee_hives_in_the_county_in_2022-box_hive-label')" />
+				<value>box_hive</value>
+			</item>
+			<item>
+				<label ref="jr:itext('what_is_the_total_number_of_bee_hives_in_the_county_in_2022-cab_hive-label')" />
+				<value>cab_hive</value>
+			</item>
+		</select>
+		<input vellum:ref="#form/number_of_log_hives" ref="/data/number_of_log_hives">
+			<label ref="jr:itext('number_of_log_hives-label')" />
+		</input>
+		<input vellum:ref="#form/number_of_kenya_top_bar_hive" ref="/data/number_of_kenya_top_bar_hive">
+			<label ref="jr:itext('number_of_kenya_top_bar_hive-label')" />
+		</input>
+		<input vellum:ref="#form/number_of_langstroth" ref="/data/number_of_langstroth">
+			<label ref="jr:itext('number_of_langstroth-label')" />
+		</input>
+		<input vellum:ref="#form/frame_hive" ref="/data/frame_hive">
+			<label ref="jr:itext('frame_hive-label')" />
+		</input>
+		<input vellum:ref="#form/number_of_box_hive" ref="/data/number_of_box_hive">
+			<label ref="jr:itext('number_of_box_hive-label')" />
+		</input>
+		<input vellum:ref="#form/number_of_cab_hives" ref="/data/number_of_cab_hives">
+			<label ref="jr:itext('number_of_cab_hives-label')" />
+		</input>
+		<select vellum:ref="#form/what_is_the_average_product_of_the_different_hives_in_the_county" ref="/data/what_is_the_average_product_of_the_different_hives_in_the_county">
+			<label ref="jr:itext('what_is_the_average_product_of_the_different_hives_in_the_county-label')" />
+			<item>
+				<label ref="jr:itext('what_is_the_average_product_of_the_different_hives_in_the_county-log_hives-label')" />
+				<value>log_hives</value>
+			</item>
+			<item>
+				<label ref="jr:itext('what_is_the_average_product_of_the_different_hives_in_the_county-kenya_top_bar_hive-label')" />
+				<value>kenya_top_bar_hive</value>
+			</item>
+			<item>
+				<label ref="jr:itext('what_is_the_average_product_of_the_different_hives_in_the_county-langstroth-label')" />
+				<value>langstroth</value>
+			</item>
+			<item>
+				<label ref="jr:itext('what_is_the_average_product_of_the_different_hives_in_the_county-frame_hive-label')" />
+				<value>frame_hive</value>
+			</item>
+			<item>
+				<label ref="jr:itext('what_is_the_average_product_of_the_different_hives_in_the_county-box_hive-label')" />
+				<value>box_hive</value>
+			</item>
+			<item>
+				<label ref="jr:itext('what_is_the_average_product_of_the_different_hives_in_the_county-cab_hive-label')" />
+				<value>cab_hive</value>
+			</item>
+		</select>
+		<input vellum:ref="#form/average_kg_for_log_hives" ref="/data/average_kg_for_log_hives">
+			<label ref="jr:itext('average_kg_for_log_hives-label')" />
+		</input>
+		<input vellum:ref="#form/average_kg_for_kenya_top_bar_hive_kg" ref="/data/average_kg_for_kenya_top_bar_hive_kg">
+			<label ref="jr:itext('average_kg_for_kenya_top_bar_hive_kg-label')" />
+		</input>
+		<input vellum:ref="#form/average_kg_for_langstroth" ref="/data/average_kg_for_langstroth">
+			<label ref="jr:itext('average_kg_for_langstroth-label')" />
+		</input>
+		<input vellum:ref="#form/average_kg_for_frame_hive" ref="/data/average_kg_for_frame_hive">
+			<label ref="jr:itext('average_kg_for_frame_hive-label')" />
+		</input>
+		<input vellum:ref="#form/average_kg_for_box_hive" ref="/data/average_kg_for_box_hive">
+			<label ref="jr:itext('average_kg_for_box_hive-label')" />
+		</input>
+		<input vellum:ref="#form/average_kg_for_cab_hives" ref="/data/average_kg_for_cab_hives">
+			<label ref="jr:itext('average_kg_for_cab_hives-label')" />
+		</input>
+		<select1 vellum:ref="#form/what_is_the_trend_of_honey_production_for_the_last_five_years" ref="/data/what_is_the_trend_of_honey_production_for_the_last_five_years">
+			<label ref="jr:itext('what_is_the_trend_of_honey_production_for_the_last_five_years-label')" />
+			<item>
+				<label ref="jr:itext('what_is_the_trend_of_honey_production_for_the_last_five_years-increase-label')" />
+				<value>increase</value>
+			</item>
+			<item>
+				<label ref="jr:itext('what_is_the_trend_of_honey_production_for_the_last_five_years-decrease-label')" />
+				<value>decrease</value>
+			</item>
+			<item>
+				<label ref="jr:itext('what_is_the_trend_of_honey_production_for_the_last_five_years-remains_constant-label')" />
+				<value>remains_constant</value>
+			</item>
+		</select1>
+		<input vellum:ref="#form/for_your_answer_give_the_reason" ref="/data/for_your_answer_give_the_reason">
+			<label ref="jr:itext('for_your_answer_give_the_reason-label')" />
+		</input>
+		<input vellum:ref="#form/what_major_problems_do_beekeepers_have" ref="/data/what_major_problems_do_beekeepers_have">
+			<label ref="jr:itext('what_major_problems_do_beekeepers_have-label')" />
+		</input>
+		<input vellum:ref="#form/what_support_do_you_give_to_smallholder_beekeepers_to_improve_their_honey_p" ref="/data/what_support_do_you_give_to_smallholder_beekeepers_to_improve_their_honey_p">
+			<label ref="jr:itext('what_support_do_you_give_to_smallholder_beekeepers_to_improve_their_honey_p-label')" />
+		</input>
+		<select1 vellum:ref="#form/do_you_think_farmers_cooperatives_can_improve_their_income_or_profits" ref="/data/do_you_think_farmers_cooperatives_can_improve_their_income_or_profits">
+			<label ref="jr:itext('do_you_think_farmers_cooperatives_can_improve_their_income_or_profits-label')" />
+			<item>
+				<label ref="jr:itext('do_you_think_farmers_cooperatives_can_improve_their_income_or_profits-yes-label')" />
+				<value>yes</value>
+			</item>
+			<item>
+				<label ref="jr:itext('do_you_think_farmers_cooperatives_can_improve_their_income_or_profits-no-label')" />
+				<value>no</value>
+			</item>
+		</select1>
+		<input vellum:ref="#form/explain" ref="/data/explain">
+			<label ref="jr:itext('explain-label')" />
+		</input>
+		<input vellum:ref="#form/what_do_you_think_the_reason_why_most_beekeepers_do_not_want_to_participati" ref="/data/what_do_you_think_the_reason_why_most_beekeepers_do_not_want_to_participati">
+			<label ref="jr:itext('what_do_you_think_the_reason_why_most_beekeepers_do_not_want_to_participati-label')" />
+		</input>
+		<input vellum:ref="#form/what_are_the_major_constraints_and_opportunities_in_honey_production_and_ma" ref="/data/what_are_the_major_constraints_and_opportunities_in_honey_production_and_ma">
+			<label ref="jr:itext('what_are_the_major_constraints_and_opportunities_in_honey_production_and_ma-label')" />
+		</input>
+		<input vellum:ref="#form/a_what_are_the_major_constraints_and_opportunities_in_honey_production_and_" ref="/data/a_what_are_the_major_constraints_and_opportunities_in_honey_production_and_">
+			<label ref="jr:itext('a_what_are_the_major_constraints_and_opportunities_in_honey_production_and_-label')" />
+		</input>
+		<input vellum:ref="#form/gps" ref="/data/gps">
+			<label ref="jr:itext('gps-label')" />
+		</input>
+		<trigger vellum:ref="#form/thank_you" ref="/data/thank_you" appearance="minimal">
+			<label ref="jr:itext('thank_you-label')" />
+		</trigger>
+	</h:body>
+</h:html>
